@@ -1,0 +1,43 @@
+#app {
+  margin: auto;
+  width: 500px;
+  padding-top: 200px;
+}
+
+a, a:hover {
+  color: #75326e;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.title {
+  margin-right: 8px;
+}
+
+.header .title, .header .subtitle {
+  display: inline-block;
+}
+
+.suggestion-item {
+  text-transform: capitalize;
+}
+
+.search-container {
+  margin-bottom: 0px;
+}
+
+/** Bootstrap Modification */
+
+.form-control:focus {
+  border-color: #431e3f;
+  box-shadow: 0 0 0 0.2rem rgba(152, 72, 144, 0.25);
+} 
+
+.list-group-item.active {
+  background-color: #75326e;
+  color: white;
+}
