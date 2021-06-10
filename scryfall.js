@@ -1,15 +1,9 @@
 // Load atoms and values into prefix trees.
 const atoms = new Trie();
-const atomToValues = new Map();
+const atomsByName = new Map();
 for (const atom of ALL_ATOMS) {
     atoms.insert(atom.key);
-    if (atom.values.length) {
-        const values = new Trie();
-        for (const possibleValue of atom.values) {
-            values.insert(possibleValue);
-        }
-        atomToValues.set(atom.key, values);
-    }
+    atomsByName.set(atom.key, atom);
 }
 
 class SuggestionData {
@@ -41,11 +35,16 @@ function getSuggestions(query, maxResults = 5) {
 
     [atom, partialValue] = lastToken.split(':');
     /*if (!partialValue) {
-    return new SuggestionData([], query.length - 1);
-  }*/
+        return new SuggestionData([], query.length - 1);
+    }*/
+
+    const currentAtom = atomsByName.get(atom);
+    if (!currentAtom) {
+        return new SuggestionData([], null);
+    }
 
     const splitterIdx = query.length - partialValue.length;
-    possibleValues = atomToValues.get(atom);
+    possibleValues = currentAtom.values;
     if (!possibleValues || !possibleValues.length) {
         return new SuggestionData([], splitterIdx);
     }
