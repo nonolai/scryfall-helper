@@ -1,5 +1,8 @@
+const SuggestionType = { NONE: 0, ATOM: 1, VALUE: 2 };
+
 class SuggestionData {
-    constructor(suggestions, lastSplitterIdx) {
+    constructor(type, suggestions, lastSplitterIdx) {
+        this.type = type;
         this.suggestions = suggestions;
         this.lastSplitterIdx = lastSplitterIdx;
     }
@@ -24,12 +27,17 @@ class SuggestionService {
         const lastToken = parts[parts.length - 1];
         if (!lastToken) {
             // probably wrong idx
-            return new SuggestionData([], query.length - 1);
+            return new SuggestionData(
+                SuggestionType.NONE,
+                [],
+                query.length - 1,
+            );
         }
 
         // TODO: Replace with any separator?
         if (!lastToken.includes(':')) {
             return new SuggestionData(
+                SuggestionType.ATOM,
                 this.atoms.find(lastToken.toLowerCase()).slice(0, maxResults),
                 query.length - lastToken.length,
             );
@@ -37,21 +45,22 @@ class SuggestionService {
 
         const [atom, partialValue] = lastToken.split(':');
         if (!partialValue) {
-            return new SuggestionData([], null);
+            return new SuggestionData(SuggestionType.NONE, [], null);
         }
 
         const currentAtom = this.atomsByName.get(atom);
         if (!currentAtom) {
-            return new SuggestionData([], null);
+            return new SuggestionData(SuggestionType.NONE, [], null);
         }
 
         const splitterIdx = query.length - partialValue.length;
         const possibleValues = currentAtom.values;
         if (!possibleValues || !possibleValues.length) {
-            return new SuggestionData([], splitterIdx);
+            return new SuggestionData(SuggestionType.NONE, [], splitterIdx);
         }
 
         return new SuggestionData(
+            SuggestionType.VALUE,
             possibleValues
                 .find(partialValue.toLowerCase())
                 .slice(0, maxResults),
