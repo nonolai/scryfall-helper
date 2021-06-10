@@ -1,60 +1,8 @@
-// Load atoms and values into prefix trees.
-const atoms = new Trie();
-const atomsByName = new Map();
-for (const atom of ALL_ATOMS) {
-    atoms.insert(atom.key);
-    atomsByName.set(atom.key, atom);
-}
+const suggestionService = new SuggestionService(ALL_ATOMS);
 
-class SuggestionData {
-    constructor(suggestions, lastSplitterIdx) {
-        this.suggestions = suggestions;
-        this.lastSplitterIdx = lastSplitterIdx;
-    }
-}
-
-function getSuggestions(query, maxResults = 5) {
-    if (!query) {
-        return new SuggestionData([], null);
-    }
-
-    const parts = query.split(' ');
-    const lastToken = parts[parts.length - 1];
-    if (!lastToken) {
-        // probably wrong idx
-        return new SuggestionData([], query.length - 1);
-    }
-
-    // TODO: Replace with any separator?
-    if (!lastToken.includes(':')) {
-        return new SuggestionData(
-            atoms.find(lastToken.toLowerCase()).slice(0, maxResults),
-            query.length - lastToken.length,
-        );
-    }
-
-    [atom, partialValue] = lastToken.split(':');
-    /*if (!partialValue) {
-        return new SuggestionData([], query.length - 1);
-    }*/
-
-    const currentAtom = atomsByName.get(atom);
-    if (!currentAtom) {
-        return new SuggestionData([], null);
-    }
-
-    const splitterIdx = query.length - partialValue.length;
-    possibleValues = currentAtom.values;
-    if (!possibleValues || !possibleValues.length) {
-        return new SuggestionData([], splitterIdx);
-    }
-
-    return new SuggestionData(
-        possibleValues.find(partialValue.toLowerCase()).slice(0, maxResults),
-        splitterIdx,
-    );
-}
-
+/**
+ * Initialize and wire up the Vue App component.
+ */
 const vm = new Vue({
     el: '#app',
     data: {
@@ -65,7 +13,7 @@ const vm = new Vue({
     computed: {
         suggestions: function () {
             this.currentSuggestion = 0;
-            const suggestionData = getSuggestions(this.query);
+            const suggestionData = suggestionService.getSuggestions(this.query);
             this.lastSplitterIdx = suggestionData.lastSplitterIdx;
             return suggestionData.suggestions;
         },
@@ -92,7 +40,6 @@ const vm = new Vue({
         suggestionClick: function (index) {
             this.currentSuggestion = index;
             this.takeSuggestion();
-            // TODO: replace this with a this.$refs when moved to an actual js project
             document.getElementById('search-input').focus();
         },
     },
