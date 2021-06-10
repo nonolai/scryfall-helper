@@ -12,9 +12,11 @@ for (const atom of ALL_ATOMS) {
     }
 }
 
-function SuggestionData(suggestions, lastSplitterIdx) {
-    this.suggestions = suggestions;
-    this.lastSplitterIdx = lastSplitterIdx;
+class SuggestionData {
+    constructor(suggestions, lastSplitterIdx) {
+        this.suggestions = suggestions;
+        this.lastSplitterIdx = lastSplitterIdx;
+    }
 }
 
 function getSuggestions(query, maxResults = 5) {

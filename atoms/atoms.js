@@ -1,7 +1,10 @@
-function Atom(key, separators, values) {
-    this.key = key;
-    this.separators = separators;
-    this.values = values;
+class Atom {
+    constructor(key, shortcut, separators, values) {
+        this.key = key;
+        this.shortcut = shortcut;
+        this.separators = separators;
+        this.values = values;
+    }
 }
 
 const ALL_ATOMS = [];
