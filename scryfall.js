@@ -13,9 +13,10 @@ const vm = new Vue({
     computed: {
         suggestions: function () {
             this.currentSuggestion = 0;
-            const suggestionData = suggestionService.getSuggestions(this.query);
-            this.lastSplitterIdx = suggestionData.lastSplitterIdx;
-            return suggestionData.suggestions;
+            const { suggestions, lastSplitterIdx } =
+                suggestionService.getSuggestions(this.query);
+            this.lastSplitterIdx = lastSplitterIdx;
+            return suggestions;
         },
     },
     methods: {
