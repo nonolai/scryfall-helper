@@ -1,12 +1,7 @@
-function Atom(key, separators, values) {
-    this.key = key;
-    this.separators = separators;
-    this.values = values;
-}
+/**
+ * Atom for searching by type with `type` and `t`.
+ */
 
-/*******************************************************************************
- * Type
- ******************************************************************************/
 const SUPERTYPES = [
     'basic',
     'elite',
@@ -439,8 +434,4 @@ const TYPE_ATOM = new Atom(
     ],
 );
 
-/*******************************************************************************
- * Full Set
- ******************************************************************************/
-
-const ALL_ATOMS = [TYPE_ATOM];
+registerAtom(TYPE_ATOM);
