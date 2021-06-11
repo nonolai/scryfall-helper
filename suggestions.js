@@ -1,3 +1,5 @@
+import { Trie } from './trie.js';
+
 const SuggestionType = { NONE: 0, ATOM: 1, VALUE: 2 };
 
 class SuggestionData {
@@ -8,7 +10,7 @@ class SuggestionData {
     }
 }
 
-class SuggestionService {
+export class SuggestionService {
     constructor(atoms) {
         this.atoms = new Trie();
         this.atomsByName = new Map();

@@ -1,3 +1,5 @@
+import { Atom } from '/atoms/atoms.js';
+
 /**
  * Atom for searching by type with `type` and `t`.
  */
@@ -418,7 +420,8 @@ const PLANESWALKER_SUBTYPES = [
     'yanling',
 ];
 const SPELL_SUBTYPES = ['adventure', 'arcane', 'lesson', 'trap'];
-const TYPE_ATOM = new Atom(
+
+export const TYPE_ATOM = new Atom(
     'type',
     't',
     [':'],
@@ -434,5 +437,3 @@ const TYPE_ATOM = new Atom(
         ...SPELL_SUBTYPES,
     ],
 );
-
-registerAtom(TYPE_ATOM);

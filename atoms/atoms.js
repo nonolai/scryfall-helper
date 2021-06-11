@@ -1,7 +1,9 @@
+import { Trie } from '/trie.js';
+
 /**
  * Defines all data for a single search atom.
  */
-class Atom {
+export class Atom {
     constructor(key, shortcut, separators, values) {
         // The search key for this atom (i.e. 'type').
         this.key = key;
@@ -23,12 +25,4 @@ class Atom {
             this.values = null;
         }
     }
-}
-
-// Registry list for all atoms.
-const ALL_ATOMS = [];
-
-// Add a new atom to our global atom registry.
-function registerAtom(newAtom) {
-    ALL_ATOMS.push(newAtom);
 }

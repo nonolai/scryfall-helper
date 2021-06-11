@@ -38,7 +38,7 @@ TrieNode.prototype.getWord = function () {
 // -----------------------------------------
 
 // we implement Trie with just a simple root with null value.
-function Trie() {
+export function Trie() {
     this.root = new TrieNode(null);
 
     this.length = 0;

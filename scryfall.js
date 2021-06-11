@@ -1,4 +1,7 @@
-const suggestionService = new SuggestionService(ALL_ATOMS);
+import { SuggestionService } from '/suggestions.js';
+import { TYPE_ATOM } from '/atoms/type.js';
+
+const suggestionService = new SuggestionService([TYPE_ATOM]);
 
 /**
  * Initialize and wire up the Vue App component.
