@@ -6,8 +6,12 @@ const suggestionService = new SuggestionService(ALL_ATOMS);
 const vm = new Vue({
     el: '#app',
     data: {
+        // The current value of the search bar.
         query: '',
+        // The current selected index in the list of suggestions.
         currentSuggestion: -1,
+        // The index in query of the last splitter (either space or atom
+        // splitter).
         lastSplitterIdx: -1,
     },
     computed: {
