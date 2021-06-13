@@ -1,4 +1,4 @@
-import { Trie } from './trie.js';
+import { Trie } from 'utils/trie';
 
 const SuggestionType = { NONE: 0, ATOM: 1, VALUE: 2 };
 

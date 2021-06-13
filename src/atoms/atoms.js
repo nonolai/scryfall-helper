@@ -1,4 +1,4 @@
-import { Trie } from '/trie.js';
+import { Trie } from 'utils/trie';
 
 /**
  * Defines all data for a single search atom.

@@ -1,0 +1,31 @@
+{
+    "name": "scryfall-helper",
+    "version": "1.0.0",
+    "description": "This project adds assistance for searching cards on [Scryfall](https://scryfall.com/).",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nonolai/scryfall-helper.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nonolai/scryfall-helper/issues"
+    },
+    "homepage": "https://github.com/nonolai/scryfall-helper#readme",
+    "devDependencies": {
+        "chalk": "^4.1.1",
+        "vue-loader": "^15.9.7",
+        "vue-template-compiler": "^2.6.14",
+        "webpack": "^5.38.1",
+        "webpack-cli": "^4.7.2"
+    },
+    "dependencies": {
+        "bootstrap": "^5.0.1",
+        "vue": "^2.6.14"
+    }
+}

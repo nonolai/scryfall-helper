@@ -23,7 +23,7 @@ function TrieNode(key) {
 
 // iterates through the parents to get the word.
 // time complexity: O(k), k = word length
-TrieNode.prototype.getWord = function () {
+TrieNode.prototype.getWord = function() {
     var output = [];
     var node = this;
 
@@ -46,7 +46,7 @@ export function Trie() {
 
 // inserts a word into the trie.
 // time complexity: O(k), k = word length
-Trie.prototype.insert = function (word) {
+Trie.prototype.insert = function(word) {
     var node = this.root; // we start at the root 😬
 
     // for every character in the word
@@ -76,7 +76,7 @@ Trie.prototype.insert = function (word) {
 
 // check if it contains a whole word.
 // time complexity: O(k), k = word length
-Trie.prototype.contains = function (word) {
+Trie.prototype.contains = function(word) {
     var node = this.root;
 
     // for every character in the word
@@ -97,7 +97,7 @@ Trie.prototype.contains = function (word) {
 
 // returns every word with given prefix
 // time complexity: O(p + n), p = prefix length, n = number of child paths
-Trie.prototype.find = function (prefix) {
+Trie.prototype.find = function(prefix) {
     var node = this.root;
     var output = [];
 

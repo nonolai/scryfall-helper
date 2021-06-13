@@ -1,4 +1,4 @@
-import { Atom } from '/atoms/atoms.js';
+import { Atom } from 'atoms/atoms';
 
 /**
  * Atom for searching by type with `type` and `t`.
