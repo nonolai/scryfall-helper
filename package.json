@@ -19,12 +19,14 @@
     "homepage": "https://github.com/nonolai/scryfall-helper#readme",
     "devDependencies": {
         "chalk": "^4.1.1",
+        "css-loader": "^6.2.0",
         "vue-loader": "^15.9.7",
         "vue-template-compiler": "^2.6.14",
         "webpack": "^5.38.1",
         "webpack-cli": "^4.7.2"
     },
     "dependencies": {
+        "@popperjs/core": "^2.9.2",
         "bootstrap": "^5.0.1",
         "vue": "^2.6.14"
     }
