@@ -2,7 +2,7 @@ import { Trie } from 'utils/trie';
 
 const SuggestionType = { NONE: 0, ATOM: 1, VALUE: 2 };
 
-class SuggestionData {
+export class SuggestionData {
     constructor(type, suggestions, lastSplitterIdx) {
         this.type = type;
         this.suggestions = suggestions;
