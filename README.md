@@ -11,3 +11,30 @@ search for.
 "Scryfall Helper" aims to add suggestions during searching to quickly inform
 what search atoms are available and, for search atoms with limited values, what
 valid values are.
+
+# Contributing
+
+## Get the Code
+
+```
+% git pull <this repo>
+% npm install
+```
+
+## Build the Code
+
+```
+% npx webpack
+```
+
+## Test the Code
+
+```
+% npm run test
+```
+
+## Push the New Version
+
+```
+% git subtree push --prefix dist origin gh-pages
+```
