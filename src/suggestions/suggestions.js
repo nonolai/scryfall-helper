@@ -1,15 +1,19 @@
 import { Trie } from 'utils/trie';
 
-export const SuggestionType = { NONE: 0, ATOM: 1, VALUE: 2 };
-
-export class SuggestionData {
-    constructor(type, suggestions, lastSplitterIdx) {
-        this.type = type;
-        this.suggestions = suggestions;
-        this.lastSplitterIdx = lastSplitterIdx;
+/**
+ * A single suggestion to display in the UI
+ * @param value The full value of the suggestion
+ * @param toAppend The string needed to append to the current query to include
+ *     the suggestion.
+ */
+export class Suggestion {
+    constructor(value, toAppend) {
+        this.value = value;
+        this.toAppend = toAppend;
     }
 }
 
+/** Utility for getting suggestions from a set of installed Atoms. */
 export class SuggestionService {
     constructor(atoms) {
         this.atoms = new Trie();
@@ -20,53 +24,62 @@ export class SuggestionService {
         }
     }
 
+    /**
+     * Get the list of suggestions for the given search query.
+     *
+     * @param {string} query The user's current search query.
+     * @param {number} maxResults Maximum number of results to display.
+     * @returns An ordered list of Suggestion objects.
+     */
     getSuggestions(query, maxResults = 5) {
         if (!query) {
-            return new SuggestionData(SuggestionType.NONE, [], null);
+            return [];
         }
 
         const parts = query.split(' ');
         const lastToken = parts[parts.length - 1];
         if (!lastToken) {
-            // probably wrong idx
-            return new SuggestionData(
-                SuggestionType.NONE,
-                [],
-                query.length - 1,
-            );
+            return [];
         }
 
         // TODO: Replace with any separator?
         if (!lastToken.includes(':')) {
-            return new SuggestionData(
-                SuggestionType.ATOM,
-                this.atoms.find(lastToken.toLowerCase()).slice(0, maxResults),
-                query.length - lastToken.length,
-            );
+            return this.atoms
+                .find(lastToken.toLowerCase())
+                .slice(0, maxResults)
+                .map(
+                    suggestion =>
+                        new Suggestion(
+                            suggestion,
+                            suggestion.substr(lastToken.length),
+                        ),
+                );
         }
 
         const [atom, partialValue] = lastToken.split(':');
         if (!partialValue) {
-            return new SuggestionData(SuggestionType.NONE, [], null);
+            return [];
         }
 
         const currentAtom = this.atomsByName.get(atom);
         if (!currentAtom) {
-            return new SuggestionData(SuggestionType.NONE, [], null);
+            return [];
         }
 
-        const splitterIdx = query.length - partialValue.length;
         const possibleValues = currentAtom.values;
         if (!possibleValues || !possibleValues.length) {
-            return new SuggestionData(SuggestionType.NONE, [], splitterIdx);
+            return [];
         }
 
-        return new SuggestionData(
-            SuggestionType.VALUE,
-            possibleValues
-                .find(partialValue.toLowerCase())
-                .slice(0, maxResults),
-            splitterIdx,
-        );
+        return possibleValues
+            .find(partialValue.toLowerCase())
+            .slice(0, maxResults)
+            .map(
+                suggestion =>
+                    new Suggestion(
+                        suggestion,
+                        suggestion.substr(partialValue.length),
+                    ),
+            );
     }
 }

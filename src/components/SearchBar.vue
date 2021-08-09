@@ -25,10 +25,10 @@
                 class="list-group-item list-group-item-action suggestion-item"
                 :class="{ active: index === currentSuggestion }"
                 v-for="(suggestion, index) in suggestions"
-                :key="suggestion"
+                :key="index"
                 @click="suggestionClick(index)"
             >
-                {{ suggestion }}
+                {{ suggestion.value }}
             </button>
         </ul>
     </div>
@@ -47,20 +47,12 @@ export default {
             query: '',
             // The current selected index in the list of suggestions.
             currentSuggestion: -1,
-            // The index in query of the last splitter (either space or atom
-            // splitter).
-            lastSplitterIdx: -1,
         };
     },
     computed: {
         suggestions: function() {
             this.currentSuggestion = 0;
-            const {
-                suggestions,
-                lastSplitterIdx,
-            } = suggestionService.getSuggestions(this.query);
-            this.lastSplitterIdx = lastSplitterIdx;
-            return suggestions;
+            return suggestionService.getSuggestions(this.query);
         },
     },
     methods: {
@@ -69,12 +61,9 @@ export default {
                 this.suggestions &&
                 this.suggestions.length > this.currentSuggestion
             ) {
-                const presplitter = this.query.substring(
-                    0,
-                    this.lastSplitterIdx,
-                );
                 this.query =
-                    presplitter + this.suggestions[this.currentSuggestion];
+                    this.query +
+                    this.suggestions[this.currentSuggestion].toAppend;
             }
         },
         submit: function() {
