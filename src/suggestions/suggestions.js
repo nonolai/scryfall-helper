@@ -1,6 +1,6 @@
 import { Trie } from 'utils/trie';
 
-const SuggestionType = { NONE: 0, ATOM: 1, VALUE: 2 };
+export const SuggestionType = { NONE: 0, ATOM: 1, VALUE: 2 };
 
 export class SuggestionData {
     constructor(type, suggestions, lastSplitterIdx) {
@@ -22,7 +22,7 @@ export class SuggestionService {
 
     getSuggestions(query, maxResults = 5) {
         if (!query) {
-            return new SuggestionData([], null);
+            return new SuggestionData(SuggestionType.NONE, [], null);
         }
 
         const parts = query.split(' ');
