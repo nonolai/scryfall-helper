@@ -102,7 +102,18 @@ describe('SuggestionService', () => {
     ////////////////////////////////////////////////////////////////////////////
     //  Shortname Suggestions
 
-    /* TODO */
+    test('returns atoms matched by shortname and full name', () => {
+        const alpha = new Atom('alpha', 'a', [':'], ['val']);
+        const apricot = new Atom('apricot', 'ap', [':'], ['val']);
+        const underTest = new SuggestionService([alpha, apricot]);
+
+        expect(underTest.getSuggestions('a')).toStrictEqual([
+            new Suggestion(':', ':'),
+            new Suggestion('ap', 'p'),
+            new Suggestion('alpha', 'lpha'),
+            new Suggestion('apricot', 'ricot'),
+        ]);
+    });
 
     ////////////////////////////////////////////////////////////////////////////
     //  Separator Suggestions
@@ -123,9 +134,20 @@ describe('SuggestionService', () => {
         const underTest = new SuggestionService([testAtom, longerTestAtom]);
 
         expect(underTest.getSuggestions('test')).toStrictEqual([
-            new Suggestion('tests2', 's1'),
-            new Suggestion('tests1', 's2'),
+            new Suggestion('s1', 's1'),
+            new Suggestion('s2', 's2'),
             new Suggestion('testasdf', 'asdf'),
+        ]);
+    });
+
+    test('returns separator for shortname matches', () => {
+        const testAtom = new Atom('test', 't', ['s1', 's2'], ['value']);
+        const underTest = new SuggestionService([testAtom]);
+
+        expect(underTest.getSuggestions('t')).toStrictEqual([
+            new Suggestion('s1', 's1'),
+            new Suggestion('s2', 's2'),
+            new Suggestion('test', 'est'),
         ]);
     });
 
