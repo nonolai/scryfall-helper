@@ -25,6 +25,43 @@ describe('SuggestionService', () => {
     });
 
     ////////////////////////////////////////////////////////////////////////////
+    //  Construction Assertions
+
+    test('fails to construct if multiple atoms share keyword', () => {
+        const alpha1 = new Atom('alpha', 'a', [':'], ['foo']);
+        const alpha2 = new Atom('alpha', 'al', [':'], ['foo']);
+
+        expect(() => {
+            new SuggestionService([alpha1, alpha2]);
+        }).toThrow('Attempted to add second atom with key: alpha');
+    });
+
+    test('fails to construct if multiple atoms share shortname', () => {
+        const alpha1 = new Atom('alpha1', 'a', [':'], ['foo']);
+        const alpha2 = new Atom('alpha2', 'a', [':'], ['foo']);
+
+        expect(() => {
+            new SuggestionService([alpha1, alpha2]);
+        }).toThrow('Attempted to add second atom with short name: a');
+    });
+
+    test('fails to construct if any atom is missing separators', () => {
+        const underTest = new Atom('alpha', 'a', [/* Missing */], ['foo']);
+
+        expect(() => {
+            new SuggestionService([underTest]);
+        }).toThrow('Attempted to add atom without separators');
+    });
+
+    test('fails to construct if any atom is missing values', () => {
+        const underTest = new Atom('alpha', 'a', [':'], [/* Missing */]);
+
+        expect(() => {
+            new SuggestionService([underTest]);
+        }).toThrow('Attempted to add atom without values');
+    });
+
+    ////////////////////////////////////////////////////////////////////////////
     //  Atom Suggestions
 
     test('returns the only matching suggestion for an atom', () => {
@@ -62,9 +99,6 @@ describe('SuggestionService', () => {
         ]);
     });
 
-    // TODO: Doesn't display atom if there is only one suggestion and it
-    //     completely matches the search query? "Ty<tab>" Skip to separators?
-
     ////////////////////////////////////////////////////////////////////////////
     //  Shortname Suggestions
 
@@ -73,7 +107,27 @@ describe('SuggestionService', () => {
     ////////////////////////////////////////////////////////////////////////////
     //  Separator Suggestions
 
-    /* TODO */
+    test('returns separator suggestions after atom is filled', () => {
+        const testAtom = new Atom('test', 't', ['s1', 's2'], ['value']);
+        const underTest = new SuggestionService([testAtom]);
+
+        expect(underTest.getSuggestions('test')).toStrictEqual([
+            new Suggestion('tests2', 's1'),
+            new Suggestion('tests1', 's2'),
+        ]);
+    });
+
+    test('returns separator and atoms the query is a substr of', () => {
+        const testAtom = new Atom('test', 't', ['s1', 's2'], ['value']);
+        const longerTestAtom = new Atom('testasdf', 'te', [':'], ['value']);
+        const underTest = new SuggestionService([testAtom, longerTestAtom]);
+
+        expect(underTest.getSuggestions('test')).toStrictEqual([
+            new Suggestion('tests2', 's1'),
+            new Suggestion('tests1', 's2'),
+            new Suggestion('testasdf', 'asdf'),
+        ]);
+    });
 
     ////////////////////////////////////////////////////////////////////////////
     //  Value Suggestions
@@ -119,5 +173,13 @@ describe('SuggestionService', () => {
         ]);
     });
 
-    // TODO: Returns values when atom capitalization mismatches i.e. 'Type:'
+    test('returns suggestions even if atom capitalization mismatches', () => {
+        const alpha = new Atom('alpha', 'a', [':'], ['apple', 'apricot']);
+        const underTest = new SuggestionService([alpha]);
+
+        expect(underTest.getSuggestions('Alpha:ap')).toStrictEqual([
+            new Suggestion('apple', 'ple'),
+            new Suggestion('apricot', 'ricot'),
+        ])
+    })
 });

@@ -18,9 +18,31 @@ export class SuggestionService {
     constructor(atoms) {
         this.atoms = new Trie();
         this.atomsByName = new Map();
+        this.atomsByShortName = new Map();
+
         for (const atom of atoms) {
-            this.atoms.insert(atom.key);
-            this.atomsByName.set(atom.key, atom);
+            if (!atom.separators || atom.separators.length === 0) {
+                throw new Error('Attempted to add atom without separators');
+            }
+            if (!atom.values || atom.values.length === 0) {
+                throw new Error('Attempted to add atom without values');
+            }
+
+            const normalizedKey = atom.key.toLowerCase();
+            this.atoms.insert(normalizedKey);
+
+            if (this.atomsByName.has(normalizedKey)) {
+                throw new Error('Attempted to add second atom with key: '
+                    + normalizedKey);
+            }
+            this.atomsByName.set(normalizedKey, atom);
+
+            const normalizedShortName = atom.shortName.toLowerCase();
+            if (this.atomsByShortName.has(normalizedShortName)) {
+                throw new Error('Attempted to add second atom with short name: '
+                    + normalizedShortName);
+            }
+            this.atomsByShortName.set(normalizedShortName, atom);
         }
     }
 
@@ -36,7 +58,7 @@ export class SuggestionService {
             return [];
         }
 
-        const parts = query.split(' ');
+        const parts = query.toLowerCase().split(' ');
         const lastToken = parts[parts.length - 1];
         if (!lastToken) {
             return [];
