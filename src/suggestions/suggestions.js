@@ -18,7 +18,6 @@ export class SuggestionService {
     constructor(atoms) {
         this.atoms = new Trie();
         this.atomsByName = new Map();
-        this.atomsByShortName = new Map();
 
         for (const atom of atoms) {
             if (!atom.separators || atom.separators.length === 0) {
@@ -28,21 +27,18 @@ export class SuggestionService {
                 throw new Error('Attempted to add atom without values');
             }
 
-            const normalizedKey = atom.key.toLowerCase();
-            this.atoms.insert(normalizedKey);
+            for (const name of atom.names) {
+                const normalizedName = name.toLowerCase();
+                this.atoms.insert(normalizedName);
 
-            if (this.atomsByName.has(normalizedKey)) {
-                throw new Error('Attempted to add second atom with key: '
-                    + normalizedKey);
+                if (this.atomsByName.has(normalizedName)) {
+                    throw new Error(
+                        'Attempted to add second atom with name: ' +
+                            normalizedName,
+                    );
+                }
+                this.atomsByName.set(normalizedName, atom);
             }
-            this.atomsByName.set(normalizedKey, atom);
-
-            const normalizedShortName = atom.shortName.toLowerCase();
-            if (this.atomsByShortName.has(normalizedShortName)) {
-                throw new Error('Attempted to add second atom with short name: '
-                    + normalizedShortName);
-            }
-            this.atomsByShortName.set(normalizedShortName, atom);
         }
     }
 

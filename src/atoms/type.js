@@ -422,8 +422,7 @@ const PLANESWALKER_SUBTYPES = [
 const SPELL_SUBTYPES = ['adventure', 'arcane', 'lesson', 'trap'];
 
 export const TYPE_ATOM = new Atom(
-    'type',
-    't',
+    ['type', 't'],
     [':'],
     [
         ...SUPERTYPES,
