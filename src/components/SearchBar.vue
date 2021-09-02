@@ -43,11 +43,13 @@ import { FORMAT_ATOM } from 'atoms/format';
 import { INCLUDE_ATOM } from 'atoms/include';
 import { HAS_ATOM, IN_ATOM, IS_ATOM } from 'atoms/misc';
 import { NEW_ATOM } from 'atoms/new';
+import { CHEAPEST_ATOM, PRICE_ATOM } from 'atoms/price';
 import { RARITY_ATOM } from 'atoms/rarity';
 import { SET_ATOM, SET_TYPE_ATOM } from 'atoms/sets';
 import { TYPE_ATOM } from 'atoms/type';
 
 const suggestionService = new SuggestionService([
+    CHEAPEST_ATOM,
     COLOR_ATOM,
     COLOR_IDENTITY_ATOM,
     FORMAT_ATOM,
@@ -56,6 +58,7 @@ const suggestionService = new SuggestionService([
     IN_ATOM,
     IS_ATOM,
     NEW_ATOM,
+    PRICE_ATOM,
     RARITY_ATOM,
     SET_ATOM,
     SET_TYPE_ATOM,
