@@ -15,6 +15,7 @@ const TYPES = [
     'enchantment',
     'instant',
     'land',
+    'plane',
     'planeswalker',
     'sorcery',
     'tribal',
