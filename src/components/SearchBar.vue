@@ -28,6 +28,7 @@
                 :key="index"
                 @click="suggestionClick(index)"
             >
+                <span class="badge">{{ suggestion.type }}</span>
                 {{ suggestion.value }}
             </button>
         </ul>
@@ -35,6 +36,7 @@
 </template>
 
 <script>
+import { SuggestionType } from 'suggestions/suggestion';
 import { SuggestionService } from 'suggestions/suggestions';
 import { TYPE_ATOM } from 'atoms/type';
 
@@ -61,9 +63,14 @@ export default {
                 this.suggestions &&
                 this.suggestions.length > this.currentSuggestion
             ) {
-                this.query =
-                    this.query +
-                    this.suggestions[this.currentSuggestion].toAppend;
+                const takenSuggestion = this.suggestions[
+                    this.currentSuggestion
+                ];
+                this.query += takenSuggestion.toAppend;
+
+                if (takenSuggestion.type === SuggestionType.VALUE) {
+                    this.query += ' ';
+                }
             }
         },
         submit: function() {
@@ -87,6 +94,15 @@ export default {
 
 .search-container {
     margin-bottom: 0px;
+}
+
+button span.badge {
+    color: #431e3f;
+}
+
+button.active span.badge {
+    color: #ffffff;
+    background-color: #431e3f;
 }
 
 /** Bootstrap Modification */

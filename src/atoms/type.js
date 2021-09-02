@@ -1,9 +1,5 @@
 import { Atom } from 'atoms/atoms';
 
-/**
- * Atom for searching by type with `type` and `t`.
- */
-
 const SUPERTYPES = [
     'basic',
     'elite',
@@ -421,6 +417,7 @@ const PLANESWALKER_SUBTYPES = [
 ];
 const SPELL_SUBTYPES = ['adventure', 'arcane', 'lesson', 'trap'];
 
+/** Atom for searching by type with `type` and `t`. */
 export const TYPE_ATOM = new Atom(
     ['type', 't'],
     [':'],
