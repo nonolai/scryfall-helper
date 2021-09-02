@@ -1,5 +1,5 @@
 import { Atom } from 'atoms/atoms';
-import { FORMATS } from 'atoms/formats';
+import { FORMATS } from 'atoms/format';
 import { SET_CODES } from 'atoms/sets';
 
 /** Atom for searching by miscellaneous characteristics. */
