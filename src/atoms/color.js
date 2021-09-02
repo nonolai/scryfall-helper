@@ -1,4 +1,4 @@
-import { Atom } from 'atoms/atoms';
+import { Atom, COMPARISON_SEPARATORS } from 'atoms/atoms';
 
 const INDIVIDUAL_COLORS = [
     'white', 'blue', 'black', 'red', 'green', 'colorless',
@@ -43,7 +43,7 @@ const ALL_COLOR_VALUES = [
  */
 export const COLOR_ATOM = new Atom(
     ['color', 'c'],
-    [':', '=', '>', '<', '>=', '<='],
+    [':', ...COMPARISON_SEPARATORS],
     ALL_COLOR_VALUES,
 );
 
@@ -55,6 +55,6 @@ export const COLOR_ATOM = new Atom(
  */
 export const COLOR_IDENTITY_ATOM = new Atom(
     ['identity', 'id'],
-    [':', '=', '>', '<', '>=', '<='],
+    [':', ...COMPARISON_SEPARATORS],
     ALL_COLOR_VALUES,
 );

@@ -1,5 +1,8 @@
 import { Suggestion, SuggestionType } from 'suggestions/suggestion';
 
+/** Separators available for use when comparing values (i.e. ci>=boros). */
+export const COMPARISON_SEPARATORS = ['=', '>', '<', '>=', '<='];
+
 /** Defines all data for a single search atom. */
 export class Atom {
     constructor(names, separators, values) {
