@@ -41,6 +41,8 @@ import { SuggestionService } from 'suggestions/suggestions';
 import { COLOR_ATOM, COLOR_IDENTITY_ATOM } from 'atoms/color';
 import { INCLUDE_ATOM } from 'atoms/include';
 import { HAS_ATOM, IS_ATOM } from 'atoms/misc';
+import { NEW_ATOM } from 'atoms/new';
+import { RARITY_ATOM } from 'atoms/rarity';
 import { TYPE_ATOM } from 'atoms/type';
 
 const suggestionService = new SuggestionService([
@@ -49,6 +51,8 @@ const suggestionService = new SuggestionService([
     HAS_ATOM,
     INCLUDE_ATOM,
     IS_ATOM,
+    NEW_ATOM,
+    RARITY_ATOM,
     TYPE_ATOM,
 ]);
 
