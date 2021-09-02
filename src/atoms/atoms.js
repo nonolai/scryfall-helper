@@ -70,12 +70,16 @@ export class Atom {
      * @returns An list of Suggestion objects for the given query text.
      */
     getSuggestions(query) {
+        if (!query) {
+            return [];
+        }
+
         const suggestions = [];
 
         const nameStageResult = this.handleStage(
             SuggestionType.NAME,
             this.names,
-            [query],
+            [query.toLowerCase()],
         );
         if (nameStageResult.perfectMatch) {
             suggestions.push(

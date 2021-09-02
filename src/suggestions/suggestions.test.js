@@ -1,13 +1,26 @@
-import { Suggestion, SuggestionService } from 'suggestions/suggestions';
+import { Suggestion, SuggestionType } from 'suggestions/suggestion';
+import { SuggestionService } from 'suggestions/suggestions';
 import { Atom } from 'atoms/atoms';
 
-describe('SuggestionService', () => {
-    ////////////////////////////////////////////////////////////////////////////
-    //  General/Misc
+/** Stubs out the behavior of the underlying atom with preloaded responses. */
+class StubAtom {
+    constructor(suggestions) {
+        this.suggestions = suggestions;
+    }
 
+    getSuggestions(query) {
+        return this.suggestions;
+    }
+}
+
+describe('SuggestionService', () => {
     test('returns no suggestions on false-y input', () => {
-        const testAtom = new Atom(['test', 't'], [':'], ['aaa']);
-        const underTest = new SuggestionService([testAtom]);
+        const throwingAtom = {
+            getSuggestions: function (_query) {
+                throw 'fake atom should not have been called';
+            }
+        }
+        const underTest = new SuggestionService([throwingAtom]);
 
         expect(underTest.getSuggestions('')).toStrictEqual([]);
         expect(underTest.getSuggestions(null)).toStrictEqual([]);
@@ -20,199 +33,62 @@ describe('SuggestionService', () => {
 
         // First search term would generate suggestion for 'aaa'.
         expect(underTest.getSuggestions('test:aa test:bb')).toStrictEqual([
-            new Suggestion('bbb', 'b'),
+            new Suggestion(SuggestionType.VALUE, 'bbb', 'b'),
         ]);
     });
 
-    ////////////////////////////////////////////////////////////////////////////
-    //  Construction Assertions
-
-    test('fails to construct if multiple atoms share keyword', () => {
-        const alpha1 = new Atom(['alpha', 'a'], [':'], ['foo']);
-        const alpha2 = new Atom(['alpha', 'al'], [':'], ['foo']);
-
-        expect(() => {
-            new SuggestionService([alpha1, alpha2]);
-        }).toThrow('Attempted to add second atom with name: alpha');
-    });
-
-    test('fails to construct if multiple atoms share shortname', () => {
-        const alpha1 = new Atom(['alpha1', 'a'], [':'], ['foo']);
-        const alpha2 = new Atom(['alpha2', 'a'], [':'], ['foo']);
-
-        expect(() => {
-            new SuggestionService([alpha1, alpha2]);
-        }).toThrow('Attempted to add second atom with name: a');
-    });
-
-    test('fails to construct if any atom is missing separators', () => {
-        const underTest = new Atom(
-            ['alpha', 'a'],
-            [
-                /* Missing */
-            ],
-            ['foo'],
-        );
-
-        expect(() => {
-            new SuggestionService([underTest]);
-        }).toThrow('Attempted to add atom without separators');
-    });
-
-    test('fails to construct if any atom is missing values', () => {
-        const underTest = new Atom(
-            ['alpha', 'a'],
-            [':'],
-            [
-                /* Missing */
-            ],
-        );
-
-        expect(() => {
-            new SuggestionService([underTest]);
-        }).toThrow('Attempted to add atom without values');
-    });
-
-    ////////////////////////////////////////////////////////////////////////////
-    //  Atom Suggestions
-
-    test('returns the only matching suggestion for an atom', () => {
-        const alpha = new Atom(['alpha', 'a'], [':'], ['foo']);
-        const beta = new Atom(['beta', 'b'], [':'], ['bar']);
-        const underTest = new SuggestionService([alpha, beta]);
-
-        expect(underTest.getSuggestions('alp')).toStrictEqual([
-            new Suggestion('alpha', 'ha'),
-        ]);
-    });
-
-    // fix these to use alpha
-    test('returns all matching suggestions for an atom', () => {
-        const alfalfa = new Atom(['alfalfa', 'al'], [':'], ['bar']);
-        const alpha = new Atom(['alfa', 'a'], [':'], ['foo']);
-        const beta = new Atom(['beta', 'b'], [':'], ['baz']);
-        const underTest = new SuggestionService([alfalfa, alpha, beta]);
-
-        expect(underTest.getSuggestions('alf')).toStrictEqual([
-            new Suggestion('alfa', 'a'),
-            new Suggestion('alfalfa', 'alfa'),
-        ]);
-    });
-
-    test('returns sorted atom suggestions despite atom order', () => {
-        const alfalfa = new Atom(['alfalfa', 'al'], [':'], ['bar']);
-        const alpha = new Atom(['alfa', 'a'], [':'], ['foo']);
-        const beta = new Atom(['beta', 'b'], [':'], ['baz']);
-        // Alfalfa should come after in suggestions but is added first
-        const underTest = new SuggestionService([alfalfa, alpha, beta]);
-
-        expect(underTest.getSuggestions('alf')).toStrictEqual([
-            new Suggestion('alfa', 'a'),
-            new Suggestion('alfalfa', 'alfa'),
-        ]);
-    });
-
-    ////////////////////////////////////////////////////////////////////////////
-    //  Alternate Name Suggestions
-
-    test('returns atoms matched by alt name and full name', () => {
-        const alpha = new Atom(['alpha', 'a'], [':'], ['val']);
-        const apricot = new Atom(['apricot', 'ap'], [':'], ['val']);
-        const underTest = new SuggestionService([alpha, apricot]);
-
-        expect(underTest.getSuggestions('a')).toStrictEqual([
-            new Suggestion(':', ':'),
-            new Suggestion('ap', 'p'),
-            new Suggestion('alpha', 'lpha'),
-            new Suggestion('apricot', 'ricot'),
-        ]);
-    });
-
-    ////////////////////////////////////////////////////////////////////////////
-    //  Separator Suggestions
-
-    test('returns separator suggestions after atom is filled', () => {
-        const testAtom = new Atom(['test', 't'], ['s1', 's2'], ['value']);
+    test('gets suggestions for atoms prefixed with minus', () => {
+        const testAtom = new Atom(['test', 't'], [':'], ['aaa', 'bbb']);
         const underTest = new SuggestionService([testAtom]);
 
-        expect(underTest.getSuggestions('test')).toStrictEqual([
-            new Suggestion('tests2', 's1'),
-            new Suggestion('tests1', 's2'),
+        expect(underTest.getSuggestions('-test:bb')).toStrictEqual([
+            new Suggestion(SuggestionType.VALUE, 'bbb', 'b'),
         ]);
     });
 
-    test('returns separator and atoms the query is a substr of', () => {
-        const testAtom = new Atom(['test', 't'], ['s1', 's2'], ['value']);
-        const longerTestAtom = new Atom(['testasdf', 'te'], [':'], ['value']);
-        const underTest = new SuggestionService([testAtom, longerTestAtom]);
+    test('gets suggestions for multiple atoms', () => {
+        const testAtomA = new Atom(['test'], [':'], ['aaa', 'bbb']);
+        const testAtomB = new Atom(['terrible'], [':'], ['aaa', 'bbb']);
+        const underTest = new SuggestionService([testAtomA, testAtomB]);
 
-        expect(underTest.getSuggestions('test')).toStrictEqual([
-            new Suggestion('s1', 's1'),
-            new Suggestion('s2', 's2'),
-            new Suggestion('testasdf', 'asdf'),
+        expect(underTest.getSuggestions('te')).toStrictEqual([
+            new Suggestion(SuggestionType.NAME, 'terrible', 'rrible'),
+            new Suggestion(SuggestionType.NAME, 'test', 'st'),
         ]);
     });
 
-    test('returns separator for shortname matches', () => {
-        const testAtom = new Atom(['test', 't'], ['s1', 's2'], ['value']);
-        const underTest = new SuggestionService([testAtom]);
-
-        expect(underTest.getSuggestions('t')).toStrictEqual([
-            new Suggestion('s1', 's1'),
-            new Suggestion('s2', 's2'),
-            new Suggestion('test', 'est'),
+    test('sorts suggestions by value', () => {
+        const stubAtom = new StubAtom(
+            ['a', 'bbb', 'as'].map(
+                x => new Suggestion(SuggestionType.VALUE, x, x)));
+        const underTest = new SuggestionService([stubAtom]);
+        expect(underTest.getSuggestions('unused')).toStrictEqual([
+            new Suggestion(SuggestionType.VALUE, 'a', 'a'),
+            new Suggestion(SuggestionType.VALUE, 'as', 'as'),
+            new Suggestion(SuggestionType.VALUE, 'bbb', 'bbb'),
         ]);
     });
 
-    ////////////////////////////////////////////////////////////////////////////
-    //  Value Suggestions
-
-    test('returns the only matching suggestion for a value', () => {
-        const alpha = new Atom(['alpha', 'a'], [':'], ['apple', 'banana']);
-        const underTest = new SuggestionService([alpha]);
-
-        expect(underTest.getSuggestions('alpha:ap')).toStrictEqual([
-            new Suggestion('apple', 'ple'),
+    test('trims results to max length', () => {
+        const stubAtom = new StubAtom(
+            ['a', 'as', 'bbb'].map(
+                x => new Suggestion(SuggestionType.VALUE, x, x)));
+        const underTest = new SuggestionService([stubAtom]);
+        expect(underTest.getSuggestions('unused', 1)).toStrictEqual([
+            new Suggestion(SuggestionType.VALUE, 'a', 'a'),
         ]);
     });
 
-    test('returns all matching suggestions for a value', () => {
-        const alpha = new Atom(
-            ['alpha', 'a'],
-            [':'],
-            ['apple', 'apricot', 'banana'],
-        );
-        const underTest = new SuggestionService([alpha]);
-
-        expect(underTest.getSuggestions('alpha:ap')).toStrictEqual([
-            new Suggestion('apple', 'ple'),
-            new Suggestion('apricot', 'ricot'),
-        ]);
-    });
-
-    test('returns sorted value suggestions despite value order', () => {
-        const alpha = new Atom(
-            ['alpha', 'a'],
-            [':'],
-            // Apricot should come after apple, but is added first.
-            ['apricot', 'apple', 'banana'],
-        );
-        // Alpha should come after in suggestions but is added first
-        const underTest = new SuggestionService([alpha]);
-
-        expect(underTest.getSuggestions('alpha:ap')).toStrictEqual([
-            new Suggestion('apple', 'ple'),
-            new Suggestion('apricot', 'ricot'),
-        ]);
-    });
-
-    test('returns suggestions even if atom capitalization mismatches', () => {
-        const alpha = new Atom(['alpha', 'a'], [':'], ['apple', 'apricot']);
-        const underTest = new SuggestionService([alpha]);
-
-        expect(underTest.getSuggestions('Alpha:ap')).toStrictEqual([
-            new Suggestion('apple', 'ple'),
-            new Suggestion('apricot', 'ricot'),
-        ]);
-    });
+    test('returns sorted-first elements even if they were returned late',
+        () => {
+            const stubAtom = new StubAtom(
+                // 'a' is last, and would otherwise be trimmed.
+                ['as', 'bbb', 'a'].map(
+                    x => new Suggestion(SuggestionType.VALUE, x, x)));
+            const underTest = new SuggestionService([stubAtom]);
+            expect(underTest.getSuggestions('unused', 1)).toStrictEqual([
+                new Suggestion(SuggestionType.VALUE, 'a', 'a'),
+            ]);
+        },
+    );
 });
