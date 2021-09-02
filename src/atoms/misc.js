@@ -1,4 +1,5 @@
 import { Atom } from 'atoms/atoms';
+import { SET_CODES } from 'atoms/sets';
 
 /** Atom for searching by miscellaneous characteristics. */
 export const HAS_ATOM = new Atom(
@@ -6,6 +7,15 @@ export const HAS_ATOM = new Atom(
     [':'],
     [
         'indicator',  // Has a color indicator
+    ]
+);
+
+/** Atom for searching by belonging to various groupings. */
+export const IN_ATOM = new Atom(
+    ['is'],
+    [':'],
+    [
+        ...SET_CODES,
     ]
 );
 

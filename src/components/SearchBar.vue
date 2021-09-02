@@ -43,6 +43,7 @@ import { INCLUDE_ATOM } from 'atoms/include';
 import { HAS_ATOM, IS_ATOM } from 'atoms/misc';
 import { NEW_ATOM } from 'atoms/new';
 import { RARITY_ATOM } from 'atoms/rarity';
+import { SET_ATOM, SET_TYPE_ATOM } from 'atoms/sets';
 import { TYPE_ATOM } from 'atoms/type';
 
 const suggestionService = new SuggestionService([
@@ -53,6 +54,8 @@ const suggestionService = new SuggestionService([
     IS_ATOM,
     NEW_ATOM,
     RARITY_ATOM,
+    SET_ATOM,
+    SET_TYPE_ATOM,
     TYPE_ATOM,
 ]);
 
