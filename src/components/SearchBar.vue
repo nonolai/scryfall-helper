@@ -38,12 +38,15 @@
 <script>
 import { SuggestionType } from 'suggestions/suggestion';
 import { SuggestionService } from 'suggestions/suggestions';
-import { TYPE_ATOM } from 'atoms/type';
 import { COLOR_ATOM, COLOR_IDENTITY_ATOM } from 'atoms/color';
+import { HAS_ATOM, IS_ATOM } from 'atoms/misc';
+import { TYPE_ATOM } from 'atoms/type';
 
 const suggestionService = new SuggestionService([
     COLOR_ATOM,
     COLOR_IDENTITY_ATOM,
+    HAS_ATOM,
+    IS_ATOM,
     TYPE_ATOM,
 ]);
 
