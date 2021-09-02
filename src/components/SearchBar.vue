@@ -82,9 +82,13 @@ export default {
             }
         },
         submit: function() {
-            const uri =
-                'https://scryfall.com/search?q=' + encodeURI(this.query);
-            location.href = uri;
+            if (this.suggestions && this.suggestions.length > 0) {
+                this.takeSuggestion();
+            } else {
+                const uri =
+                    'https://scryfall.com/search?q=' + encodeURI(this.query);
+                location.href = uri;
+            }
         },
         suggestionClick: function(index) {
             this.currentSuggestion = index;
