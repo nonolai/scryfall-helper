@@ -39,8 +39,9 @@
 import { SuggestionType } from 'suggestions/suggestion';
 import { SuggestionService } from 'suggestions/suggestions';
 import { COLOR_ATOM, COLOR_IDENTITY_ATOM } from 'atoms/color';
+import { FORMAT_ATOM } from 'atoms/format';
 import { INCLUDE_ATOM } from 'atoms/include';
-import { HAS_ATOM, IS_ATOM } from 'atoms/misc';
+import { HAS_ATOM, IN_ATOM, IS_ATOM } from 'atoms/misc';
 import { NEW_ATOM } from 'atoms/new';
 import { RARITY_ATOM } from 'atoms/rarity';
 import { SET_ATOM, SET_TYPE_ATOM } from 'atoms/sets';
@@ -49,8 +50,10 @@ import { TYPE_ATOM } from 'atoms/type';
 const suggestionService = new SuggestionService([
     COLOR_ATOM,
     COLOR_IDENTITY_ATOM,
+    FORMAT_ATOM,
     HAS_ATOM,
     INCLUDE_ATOM,
+    IN_ATOM,
     IS_ATOM,
     NEW_ATOM,
     RARITY_ATOM,

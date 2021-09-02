@@ -1,4 +1,5 @@
 import { Atom } from 'atoms/atoms';
+import { FORMATS } from 'atoms/formats';
 import { SET_CODES } from 'atoms/sets';
 
 /** Atom for searching by miscellaneous characteristics. */
@@ -12,10 +13,11 @@ export const HAS_ATOM = new Atom(
 
 /** Atom for searching by belonging to various groupings. */
 export const IN_ATOM = new Atom(
-    ['is'],
+    ['in'],
     [':'],
     [
         ...SET_CODES,
+        ...FORMATS,
     ]
 );
 
@@ -25,8 +27,12 @@ export const IS_ATOM = new Atom(
     [':'],
     [
         'booster', // Cards that were sold in boosters
-        'buyabox', // CArds that were available as buy-a-box promos
+        'brawler', // Cards that can be your Brawl Commander
+        'buyabox', // Cards that were available as buy-a-box promos
+        'commander', // Cards that can be your commander
+        'companion', // Cards that can be companions
         'dfc', // Double-faced cards
+        'duelcommander', // Cards that can be your duel commander
         'flip', // Flip cards
         'frenchvanilla', // Creature with only keyword abilities
         'funny', // Un-sets, holiday, and other funny cards
@@ -45,6 +51,7 @@ export const IS_ATOM = new Atom(
         'phyrexian', // Has phyrexian mana in its cost
         'prerelease', // Prerelease promos
         'release', // Release promos
+        'reserved', // On the reserved list
         'spell', // It's an instant or sorcery
         'transform', // Cards that transform
         'vanilla', // It's a vanilla creature (no abilities)
