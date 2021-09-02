@@ -16,7 +16,7 @@ import { Atom } from 'atoms/atoms';
  *     print(f"    '{mtgset['code']}',{''.join(spaces)} // {mtgset['name']}")
  * ```
  */
-const SET_CODES = [
+export const SET_CODES = [
     'lea',   // Limited Edition Alpha
     'leb',   // Limited Edition Beta
     '2ed',   // Unlimited Edition

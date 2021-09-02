@@ -1,6 +1,6 @@
 import { Atom } from 'atoms/atoms';
 
-const FORMATS = [
+export const FORMATS = [
     'standard',
     'future',
     'historic',
