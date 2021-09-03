@@ -41,6 +41,7 @@ import { SuggestionService } from 'suggestions/suggestions';
 import { COLOR_ATOM, COLOR_IDENTITY_ATOM } from 'atoms/color';
 import { FORMAT_ATOM } from 'atoms/format';
 import { INCLUDE_ATOM } from 'atoms/include';
+import { KEYWORD_ATOM } from 'atoms/keyword';
 import { HAS_ATOM, IN_ATOM, IS_ATOM } from 'atoms/misc';
 import { NEW_ATOM } from 'atoms/new';
 import { CHEAPEST_ATOM, PRICE_ATOM } from 'atoms/price';
@@ -59,6 +60,7 @@ const suggestionService = new SuggestionService([
     INCLUDE_ATOM,
     IN_ATOM,
     IS_ATOM,
+    KEYWORD_ATOM,
     NEW_ATOM,
     ORACLE_TEXT_ATOM,
     PRICE_ATOM,
