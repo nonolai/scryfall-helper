@@ -25,7 +25,10 @@ export const IN_ATOM = new Atom(
 
 /** Atom for searching by miscellaneous identity. */
 export const IS_ATOM = new Atom(
-    ['is'],
+    [
+        'is',
+        'not', // Negation of 'is', but with all the same possible values.
+    ],
     [':'],
     [
         'booster', // Cards that were sold in boosters
