@@ -1,5 +1,6 @@
 import { Atom } from 'atoms/atoms';
 import { FORMATS } from 'atoms/format';
+import { GAMES } from 'atoms/games';
 import { SET_CODES } from 'atoms/sets';
 
 /** Atom for searching by miscellaneous characteristics. */
@@ -18,6 +19,7 @@ export const IN_ATOM = new Atom(
     [
         ...SET_CODES,
         ...FORMATS,
+        ...GAMES,
     ]
 );
 
