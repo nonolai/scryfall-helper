@@ -56,10 +56,12 @@ import { NEW_ATOM } from 'atoms/new';
 import { CHEAPEST_ATOM, PRICE_ATOM } from 'atoms/price';
 import { RARITY_ATOM } from 'atoms/rarity';
 import { SET_ATOM, SET_TYPE_ATOM } from 'atoms/sets';
+import { ART_TAG_ATOM, FUNCTION_TAG_ATOM } from 'atoms/tags';
 import { FLAVOR_TEXT_ATOM, ORACLE_TEXT_ATOM } from 'atoms/text';
 import { TYPE_ATOM } from 'atoms/type';
 
 const suggestionService = new SuggestionService([
+    ART_TAG_ATOM,
     ARTIST_ATOM,
     ARTIST_COUNT_ATOM,
     BORDER_ATOM,
@@ -70,6 +72,7 @@ const suggestionService = new SuggestionService([
     FLAVOR_TEXT_ATOM,
     FORMAT_ATOM,
     FRAME_ATOM,
+    FUNCTION_TAG_ATOM,
     GAMES_ATOM,
     HAS_ATOM,
     ILLUSTRATION_COUNT_ATOM,
