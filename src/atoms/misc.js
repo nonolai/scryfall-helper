@@ -65,6 +65,7 @@ export const IS_ATOM = new Atom(
         'promo', // Any promo cards
         'release', // Release promos
         'reserved', // On the reserved list
+        'reprint', // Cards that are reprints
         'scryfallpreview', // Cards Scryfall got to preview to the community :)
         'spell', // It's an instant or sorcery
         'spotlight', // Story spotlight cards

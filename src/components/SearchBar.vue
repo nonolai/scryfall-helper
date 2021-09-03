@@ -54,11 +54,18 @@ import { KEYWORD_ATOM } from 'atoms/keyword';
 import { HAS_ATOM, IN_ATOM, IS_ATOM } from 'atoms/misc';
 import { NEW_ATOM } from 'atoms/new';
 import { CHEAPEST_ATOM, PRICE_ATOM } from 'atoms/price';
+import {
+    PRINT_COUNT_ATOM,
+    SET_COUNT_ATOM,
+    PAPER_PRINT_COUNT_ATOM,
+    PAPER_SET_COUNT_ATOM,
+} from 'atoms/printings';
 import { RARITY_ATOM } from 'atoms/rarity';
 import { SET_ATOM, SET_TYPE_ATOM } from 'atoms/sets';
 import { ART_TAG_ATOM, FUNCTION_TAG_ATOM } from 'atoms/tags';
 import { FLAVOR_TEXT_ATOM, ORACLE_TEXT_ATOM } from 'atoms/text';
 import { TYPE_ATOM } from 'atoms/type';
+
 
 const suggestionService = new SuggestionService([
     ART_TAG_ATOM,
@@ -82,9 +89,13 @@ const suggestionService = new SuggestionService([
     KEYWORD_ATOM,
     NEW_ATOM,
     ORACLE_TEXT_ATOM,
+    PAPER_PRINT_COUNT_ATOM,
+    PAPER_SET_COUNT_ATOM,
     PRICE_ATOM,
+    PRINT_COUNT_ATOM,
     RARITY_ATOM,
     SET_ATOM,
+    SET_COUNT_ATOM,
     SET_TYPE_ATOM,
     TYPE_ATOM,
     WATERMARK_ATOM,
