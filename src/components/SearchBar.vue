@@ -51,6 +51,7 @@ import { FORMAT_ATOM } from 'atoms/format';
 import { GAMES_ATOM } from 'atoms/games';
 import { INCLUDE_ATOM } from 'atoms/include';
 import { KEYWORD_ATOM } from 'atoms/keyword';
+import { LANGUAGE_ATOM } from 'atoms/language';
 import { HAS_ATOM, IN_ATOM, IS_ATOM } from 'atoms/misc';
 import { NEW_ATOM } from 'atoms/new';
 import { CHEAPEST_ATOM, PRICE_ATOM } from 'atoms/price';
@@ -87,6 +88,7 @@ const suggestionService = new SuggestionService([
     IN_ATOM,
     IS_ATOM,
     KEYWORD_ATOM,
+    LANGUAGE_ATOM,
     NEW_ATOM,
     ORACLE_TEXT_ATOM,
     PAPER_PRINT_COUNT_ATOM,
