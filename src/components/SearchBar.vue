@@ -46,6 +46,7 @@ import {
 } from 'atoms/art';
 import { BORDER_ATOM, FRAME_ATOM } from 'atoms/border';
 import { COLOR_ATOM, COLOR_IDENTITY_ATOM } from 'atoms/color';
+import { DATE_ATOM } from 'atoms/date';
 import { FORMAT_ATOM } from 'atoms/format';
 import { GAMES_ATOM } from 'atoms/games';
 import { INCLUDE_ATOM } from 'atoms/include';
@@ -65,6 +66,7 @@ const suggestionService = new SuggestionService([
     CHEAPEST_ATOM,
     COLOR_ATOM,
     COLOR_IDENTITY_ATOM,
+    DATE_ATOM,
     FLAVOR_TEXT_ATOM,
     FORMAT_ATOM,
     FRAME_ATOM,
