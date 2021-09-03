@@ -38,7 +38,13 @@
 <script>
 import { SuggestionType } from 'suggestions/suggestion';
 import { SuggestionService } from 'suggestions/suggestions';
-import { ARTIST_ATOM, ARTIST_COUNT_ATOM, ILLUSTRATION_COUNT_ATOM, WATERMARK_ATOM } from 'atoms/art';
+import {
+    ARTIST_ATOM,
+    ARTIST_COUNT_ATOM,
+    ILLUSTRATION_COUNT_ATOM,
+    WATERMARK_ATOM,
+} from 'atoms/art';
+import { BORDER_ATOM, FRAME_ATOM } from 'atoms/border';
 import { COLOR_ATOM, COLOR_IDENTITY_ATOM } from 'atoms/color';
 import { FORMAT_ATOM } from 'atoms/format';
 import { INCLUDE_ATOM } from 'atoms/include';
@@ -54,11 +60,13 @@ import { TYPE_ATOM } from 'atoms/type';
 const suggestionService = new SuggestionService([
     ARTIST_ATOM,
     ARTIST_COUNT_ATOM,
+    BORDER_ATOM,
     CHEAPEST_ATOM,
     COLOR_ATOM,
     COLOR_IDENTITY_ATOM,
     FLAVOR_TEXT_ATOM,
     FORMAT_ATOM,
+    FRAME_ATOM,
     HAS_ATOM,
     ILLUSTRATION_COUNT_ATOM,
     INCLUDE_ATOM,
