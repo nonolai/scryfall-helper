@@ -25,6 +25,27 @@ export const IN_ATOM = new Atom(
     ]
 );
 
+const LAND_NICKNAMES = [
+    'bikeland', 'cycleland', 'bicycleland', // 'Cycling 2'
+    'bounceland', 'karoo', // 'Sacrifice it unless you bounce...'
+    'canopyland', 'canland', // 1, T, Sac ~: Draw a card
+    'checkland', // Enters tapped unless you control a $BASIC or $BASIC
+    'dual', // The OGs
+    'fastland', // Enters tapped if you have 3+ other lands
+    'fetchland', // Pay 1 life, T, Sac ~: Search for a $BASIC or $BASIC
+    'filterland', // Mana comes in, Mana comes out in fixed colors
+    'gainland', // ETB, gain 1 life
+    'painland', // T: Add colorless, T: add $C1 or $C2, take 1 damage
+    'scryland', // ETB, scry 1
+    'shadowland', // ETB reveal a $BASIC or $BASIC, or ETB tapped
+    'shockland', // ETB pay 2 life or ETB tapped
+    'storageland', // Storage counters
+    'creatureland', 'manland', // Becomes a creature till EOT
+    'triland', // ETB tapped, 3 colors (not Triomes)
+    'triome', // Ikoria triome lands
+    'tangoland', 'battleland', // ETB Tapped unless 2+ basics
+];
+
 /** Atom for searching by miscellaneous identity. */
 export const IS_ATOM = new Atom(
     [
@@ -56,6 +77,7 @@ export const IS_ATOM = new Atom(
         'intro_pack', // Cards from intro packs
         'league', // League promos (*shrug*)
         'leveler', // Cards w/ level up
+        'masterpiece', // Cards from the Masterpiece Series
         'mdfc', // Modal double-faced cards
         'meld', // Cards that meld
         'nonfoil', // Cards available in non-foil
@@ -73,5 +95,6 @@ export const IS_ATOM = new Atom(
         'spotlight', // Story spotlight cards
         'transform', // Cards that transform
         'vanilla', // It's a vanilla creature (no abilities)
+        ...LAND_NICKNAMES,
     ],
 );
