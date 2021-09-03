@@ -47,6 +47,14 @@ import {
 import { BORDER_ATOM, FRAME_ATOM } from 'atoms/border';
 import { COLOR_ATOM, COLOR_IDENTITY_ATOM } from 'atoms/color';
 import { DATE_ATOM } from 'atoms/date';
+import {
+    DIRECTION_ATOM,
+    DISPLAY_ATOM,
+    ORDER_ATOM,
+    PREFER_ATOM,
+    UNIQUE_ATOM,
+    UNIQUE_SHORTCUTS_ATOM,
+} from 'atoms/display';
 import { FORMAT_ATOM } from 'atoms/format';
 import { GAMES_ATOM } from 'atoms/games';
 import { INCLUDE_ATOM } from 'atoms/include';
@@ -77,6 +85,8 @@ const suggestionService = new SuggestionService([
     COLOR_ATOM,
     COLOR_IDENTITY_ATOM,
     DATE_ATOM,
+    DIRECTION_ATOM,
+    DISPLAY_ATOM,
     FLAVOR_TEXT_ATOM,
     FORMAT_ATOM,
     FRAME_ATOM,
@@ -91,8 +101,10 @@ const suggestionService = new SuggestionService([
     LANGUAGE_ATOM,
     NEW_ATOM,
     ORACLE_TEXT_ATOM,
+    ORDER_ATOM,
     PAPER_PRINT_COUNT_ATOM,
     PAPER_SET_COUNT_ATOM,
+    PREFER_ATOM,
     PRICE_ATOM,
     PRINT_COUNT_ATOM,
     RARITY_ATOM,
@@ -100,6 +112,8 @@ const suggestionService = new SuggestionService([
     SET_COUNT_ATOM,
     SET_TYPE_ATOM,
     TYPE_ATOM,
+    UNIQUE_ATOM,
+    UNIQUE_SHORTCUTS_ATOM,
     WATERMARK_ATOM,
 ]);
 
