@@ -46,18 +46,21 @@ import { NEW_ATOM } from 'atoms/new';
 import { CHEAPEST_ATOM, PRICE_ATOM } from 'atoms/price';
 import { RARITY_ATOM } from 'atoms/rarity';
 import { SET_ATOM, SET_TYPE_ATOM } from 'atoms/sets';
+import { FLAVOR_TEXT_ATOM, ORACLE_TEXT_ATOM } from 'atoms/text';
 import { TYPE_ATOM } from 'atoms/type';
 
 const suggestionService = new SuggestionService([
     CHEAPEST_ATOM,
     COLOR_ATOM,
     COLOR_IDENTITY_ATOM,
+    FLAVOR_TEXT_ATOM,
     FORMAT_ATOM,
     HAS_ATOM,
     INCLUDE_ATOM,
     IN_ATOM,
     IS_ATOM,
     NEW_ATOM,
+    ORACLE_TEXT_ATOM,
     PRICE_ATOM,
     RARITY_ATOM,
     SET_ATOM,
