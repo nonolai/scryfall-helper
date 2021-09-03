@@ -31,6 +31,7 @@ export const IS_ATOM = new Atom(
         'buyabox', // Cards that were available as buy-a-box promos
         'commander', // Cards that can be your commander
         'companion', // Cards that can be companions
+        'digital', // Prints of cards that are only available digitally
         'dfc', // Double-faced cards
         'duelcommander', // Cards that can be your duel commander
         'etched', // Cards available in etched foil
@@ -56,9 +57,12 @@ export const IS_ATOM = new Atom(
         'planeswalker_deck',
         'phyrexian', // Has phyrexian mana in its cost
         'prerelease', // Prerelease promos
+        'promo', // Any promo cards
         'release', // Release promos
         'reserved', // On the reserved list
+        'scryfallpreview', // Cards Scryfall got to preview to the community :)
         'spell', // It's an instant or sorcery
+        'spotlight', // Story spotlight cards
         'transform', // Cards that transform
         'vanilla', // It's a vanilla creature (no abilities)
     ],
