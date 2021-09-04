@@ -3,7 +3,9 @@
         <h1 class="title">Scryfall Helper</h1>
         <span class="subtitle">
             by
-            <a href="https://github.com/nonolai" target="_blank">nonolai</a>
+            <a href="https://github.com/nonolai" target="_blank" rel="noopener">
+                nonolai
+            </a>
         </span>
     </span>
 </template>
