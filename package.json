@@ -4,7 +4,9 @@
     "description": "This project adds assistance for searching cards on [Scryfall](https://scryfall.com/).",
     "private": true,
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "devserver": "webpack serve --open --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js"
     },
     "repository": {
         "type": "git",
@@ -29,7 +31,9 @@
         "vue-loader": "^15.9.7",
         "vue-template-compiler": "^2.6.14",
         "webpack": "^5.38.1",
-        "webpack-cli": "^4.7.2"
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^4.1.0",
+        "webpack-merge": "^5.8.0"
     },
     "dependencies": {
         "@popperjs/core": "^2.9.2",

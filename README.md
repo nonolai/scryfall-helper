@@ -8,11 +8,11 @@ pretty much any subset of Magic: The Gathering cards you could imagine. However,
 their search boxes provide very little assistance in discovering what you can
 search for.
 
-"Scryfall Helper" aims to add suggestions during searching to quickly inform
-what search atoms are available and, for search atoms with limited values, what
-valid values are.
+["Scryfall Helper"](https://nonolai.github.io/scryfall-helper/) aims to add
+suggestions during searching to quickly inform what search atoms are available
+and, for search atoms with limited values, what valid values are.
 
-# Contributing
+# Devlopment Workflow
 
 ## Get the Code
 
@@ -21,10 +21,16 @@ valid values are.
 % npm install
 ```
 
-## Build the Code
+## Build the Production Code
 
 ```
-% npx webpack
+% npm run build
+```
+
+## Run the Local Development Server
+
+```
+% npm run devserver
 ```
 
 ## Test the Code
