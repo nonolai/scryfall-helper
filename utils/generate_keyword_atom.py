@@ -3,11 +3,7 @@
 import re
 import urllib.request
 
-# Link to the text doc format of the comprehensive rules from:
-# https://magic.wizards.com/en/game-info/gameplay/rules-and-formats/rules
-COMP_RULES_URL = (
-    "https://media.wizards.com/2021/downloads/MagicCompRules%2020211115.txt"
-)
+from common import LATEST_COMP_RULES_URL
 
 
 OUTPUT_TEMPLATE = """import {{ Atom }} from 'atoms/atoms';
@@ -44,7 +40,7 @@ def line_for_ability(ability):
 
 
 def main():
-    response = urllib.request.urlopen(COMP_RULES_URL)
+    response = urllib.request.urlopen(LATEST_COMP_RULES_URL)
     lines = response.read().decode("utf-8").split("\n")
 
     values = []
