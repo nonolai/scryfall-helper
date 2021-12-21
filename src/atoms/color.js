@@ -37,7 +37,7 @@ const ALL_COLOR_VALUES = [
 
 /**
  * Atom for searching by color.
- * 
+ *
  * Note: Does not suggest individual color letters or combinations (i.e. 'r',
  * 'bg', etc.).
  */
@@ -49,12 +49,12 @@ export const COLOR_ATOM = new Atom(
 
 /**
  * Atom for searching by color identity.
- * 
+ *
  * Note: Does not suggest individual color letters or combinations (i.e. 'r',
  * 'bg', etc.).
  */
 export const COLOR_IDENTITY_ATOM = new Atom(
-    ['identity', 'id'],
+    ['commander', 'identity', 'id'],
     [':', ...COMPARISON_SEPARATORS],
     ALL_COLOR_VALUES,
 );
