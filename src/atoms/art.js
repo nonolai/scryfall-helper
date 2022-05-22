@@ -28,81 +28,53 @@ export const ILLUSTRATION_COUNT_ATOM = new Atom(
 
 /**
  * Atom for searching for cards by their watermark.
- * 
- * Code for getting the full list of (uncategorized) watermarks:
- * 
- * ```python
- * import requests
- * ENDPOINT = 'https://api.scryfall.com/cards/search?q=has%3Awm'
- * print(
- *     set(
- *         filter(
- *             None,
- *             [
- *                 (card['watermark'] if 'watermark' in card else None)
- *                 for card in requests.get(ENDPOINT).json()['data']
- *             ],
- *         ),
- *     )
- * )
- * ```
+ *
+ * Regenerate values with: python3 atom_generator.py watermark
  */
 export const WATERMARK_ATOM = new Atom(
     ['watermark', 'wm'],
     [':'],
+    // START_SECTION WATERMARK_ATOM_VALUES
     [
-        'set',
-        // Brand
-        'colorpie',
-        'mtg',
-        'planeswalker',
-        'wotc',
-        // Judge
-        'judgeacademy',
-        // Organized Play
+        'abzan',
+        'agentsofsneak',
         'arena',
-        'fnm',
-        'protour',
-        // Guilds
+        'atarka',
         'azorius',
         'boros',
+        'brokers',
+        'cabaretti',
+        'colorpie',
+        'conspiracy',
+        'crossbreedlabs',
         'dimir',
+        'dromoka',
+        'flavor',
+        'fnm',
+        'foretell',
         'golgari',
-        'gruul',
-        'izzet',
+        'judgeacademy',
+        'kolaghan',
+        'lorehold',
+        'maestros',
+        'mardu',
+        'mirran',
+        'mtg',
+        'ojutai',
+        'orderofthewidget',
         'orzhov',
+        'phyrexian',
+        'planeswalker',
+        'protour',
+        'quandrix',
         'rakdos',
         'selesnya',
+        'set',
+        'silumgar',
         'simic',
-        // Mirrodin
-        'mirran',
-        'phyrexian',
-        // Strixhaven Schools
-        'lorehold',
-        'prismari',
-        'quandrix',
-        'silverquill',
-        // Tarkir Clans
-        'abzan',
-        'jeskai',
-        'mardu',
         'sultai',
         'temur',
-        // Tarkir Dragons
-        'atarka',
-        'dromoka',
-        'kolaghan',
-        'ojutai',
-        'silumgar',
-        // Unhinged
-        'flavor',
-        // Unstable
-        'agentsofsneak',
-        'crossbreedlabs',
-        'orderofthewidget',
-        // Conspiracy
-        'conspiracy',
-        // Mechanic-specific
-        'foretell',
+        'wotc',
     ],
+    // END_SECTION WATERMARK_ATOM_VALUES
 )

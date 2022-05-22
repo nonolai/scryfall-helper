@@ -14,15 +14,15 @@ const NICKNAMES = [
     'rakdos', // BR
     'golgari', // BG
     'gruul', // RG
-    'esper', // WUB
+    'esper', 'obscura', // WUB
     'jeskai', // WUR
-    'bant', // WUG
+    'bant', 'brokers', // WUG
     'mardu', // WBR
     'abzan', // WBG
-    'naya', // WRG
-    'grixis', // UBR
+    'naya', 'cabaretti', // WRG
+    'grixis', 'maestros', // UBR
     'sultai', // UBG
-    'jund', // BRG
+    'jund', 'riveteers', // BRG
     'artifice', // WUBR
     'growth', // WUBG
     'altruism', // WURG

@@ -21,6 +21,12 @@ and, for search atoms with limited values, what valid values are.
 % npm install
 ```
 
+## Regenerate Automated Search Atoms
+
+```
+% python3 atom_generator.py <all|atom to regenerate>
+```
+
 ## Build the Production Code
 
 ```
