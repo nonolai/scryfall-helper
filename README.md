@@ -8,7 +8,7 @@ pretty much any subset of Magic: The Gathering cards you could imagine. However,
 their search boxes provide very little assistance in discovering what you can
 search for.
 
-["Scryfall Helper"](https://nonolai.github.io/scryfall-helper/) aims to add
+["Scryfall Helper"](https://scryfallhelper.nonolai.dev) aims to add
 suggestions during searching to quickly inform what search atoms are available
 and, for search atoms with limited values, what valid values are.
 
