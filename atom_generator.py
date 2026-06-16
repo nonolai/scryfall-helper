@@ -29,6 +29,8 @@ SUPPORTED_ATOMS = [
 # Location relative to which to search for files when replacing text
 SCRIPT_PATH = Path(os.path.dirname(__file__))
 
+SCRYFALL_REQUEST_HEADERS = {"User-Agent": "ScryfallHelper/1.0", "Accept": "*/*"}
+
 
 class FullRules:
     """Helper class for encapsulating interactions with the comprehensive rules."""
@@ -43,6 +45,7 @@ class FullRules:
             # TODO: This is encoded as ISO-8859-1. It would be nice if it could be UTF-8 before
             # splitting.
             self.lines = requests.get(COMPREHENSIVE_RULES_URL).text.splitlines()
+
             self.initialized = True
 
     def get_lines(self) -> Iterable[str]:
@@ -174,7 +177,9 @@ def regenerate_watermark_atom():
             None,
             [
                 (card["watermark"] if "watermark" in card else None)
-                for card in requests.get(watermark_endpoint).json()["data"]
+                for card in requests.get(
+                    watermark_endpoint, headers=SCRYFALL_REQUEST_HEADERS
+                ).json()["data"]
             ],
         ),
     )
@@ -248,7 +253,7 @@ def regenerate_set_atom():
     """Regenerates the set atom by pulling set data from the Scryfall sets API."""
     ENDPOINT = "https://api.scryfall.com/sets"
 
-    r = requests.get(ENDPOINT)
+    r = requests.get(ENDPOINT, headers=SCRYFALL_REQUEST_HEADERS)
     all_sets = sorted(
         r.json()["data"], key=lambda set: (set["released_at"], set["code"])
     )
