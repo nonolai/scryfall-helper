@@ -23,8 +23,15 @@ and, for search atoms with limited values, what valid values are.
 
 ## Regenerate Automated Search Atoms
 
+`.venv` is automatically ignored by `.gitignore`, and creating it can be ignored
+if the it already exists.
+
 ```
-% python3 atom_generator.py <all|atom to regenerate>
+% python3 -m venv .venv
+% source .venv/bin/activate
+(venv) % pip3 install -r requirements.txt
+(venv) % python3 atom_generator.py <all|atom to regenerate>
+(venv) % deactivate
 ```
 
 ## Build the Production Code
@@ -43,10 +50,4 @@ and, for search atoms with limited values, what valid values are.
 
 ```
 % npm run test
-```
-
-## Push the New Version
-
-```
-% git subtree push --prefix dist origin gh-pages
 ```
