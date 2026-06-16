@@ -10,7 +10,6 @@ from enum import Enum
 from pathlib import Path
 from typing import Iterable, Optional
 
-
 COMPREHENSIVE_RULES_URL = (
     "https://media.wizards.com/2022/downloads/MagicCompRules%2020220429.txt"
 )
