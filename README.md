@@ -43,7 +43,7 @@ if the it already exists.
 ## Run the Local Development Server
 
 ```
-% npm run devserver
+% npm run dev
 ```
 
 ## Test the Code
