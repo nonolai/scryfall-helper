@@ -261,7 +261,7 @@ def regenerate_set_atom():
     lines = []
     for mtgset in all_sets:
         spaces = [" "] * (5 - len(mtgset["code"]))
-        lines.append(f"    '{mtgset['code']}',{''.join(spaces)} // {mtgset['name']}")
+        lines.append(f"    '{mtgset['code']}',{''.join(spaces)} // {mtgset['name'].rstrip()}")
 
     replace_section(
         SCRIPT_PATH / "src" / "atoms" / "sets.js",

@@ -5,8 +5,8 @@ export const SET_CODES = [
     'lea',   // Limited Edition Alpha
     'leb',   // Limited Edition Beta
     '2ed',   // Unlimited Edition
-    'ced',   // Collectors� Edition
-    'cei',   // Intl. Collectors� Edition
+    'ced',   // Collectors' Edition
+    'cei',   // Intl. Collectors' Edition
     'arn',   // Arabian Nights
     'atq',   // Antiquities
     '3ed',   // Revised Edition
@@ -17,17 +17,19 @@ export const SET_CODES = [
     'drk',   // The Dark
     'phpr',  // HarperPrism Book Promos
     'fem',   // Fallen Empires
-    'plgm',  // DCI Legend Membership
-    'pmei',  // Media Inserts
+    'pmei',  // Media and Collaboration Promos
     '4bb',   // Fourth Edition Foreign Black Border
     '4ed',   // Fourth Edition
     'ice',   // Ice Age
+    'bchr',  // Chronicles Foreign Black Border
     'chr',   // Chronicles
     'ren',   // Renaissance
     'rin',   // Rinascimento
     'hml',   // Homelands
+    'o90p',  // Oversized 90's Promos
     'ptc',   // Pro Tour Collector Set
     'all',   // Alliances
+    'plgm',  // DCI Legend Membership
     'rqs',   // Rivals Quick Start Set
     'parl',  // Arena League 1996
     'pcel',  // Celebration Cards
@@ -40,8 +42,8 @@ export const SET_CODES = [
     'past',  // Astral Cards
     'pmic',  // MicroProse Promos
     'por',   // Portal
-    'ppod',  // Portal Demo Game
     'pvan',  // Vanguard Series
+    'olep',  // Oversized League Prizes
     'wth',   // Weatherlight
     'wc97',  // World Championship Decks 1997
     'ptmp',  // Tempest Promos
@@ -64,11 +66,11 @@ export const SET_CODES = [
     'pulg',  // Urza's Legacy Promos
     'ulg',   // Urza's Legacy
     '6ed',   // Classic Sixth Edition
+    'pptk',  // Portal Three Kingdoms Promos
+    'ptk',   // Portal Three Kingdoms
     'puds',  // Urza's Destiny Promos
     'uds',   // Urza's Destiny
-    'pptk',  // Portal: Three Kingdoms Promos
     's99',   // Starter 1999
-    'ptk',   // Portal Three Kingdoms
     'pgru',  // Guru
     'pwor',  // World Championship Promos
     'wc99',  // World Championship Decks 1999
@@ -113,9 +115,10 @@ export const SET_CODES = [
     'jud',   // Judgment
     'pjud',  // Judgment Promos
     'prm',   // Magic Online Promos
-    'phj',   // Hobby Japan Promos
-    'wc02',  // World Championship Decks 2002
+    'jp1',   // Hobby Japan Promos
+    'pons',  // Onslaught Promos
     'ons',   // Onslaught
+    'wc02',  // World Championship Decks 2002
     'f03',   // Friday Night Magic 2003
     'g03',   // Judge Gift Cards 2003
     'ovnt',  // Vintage Championship
@@ -125,7 +128,6 @@ export const SET_CODES = [
     'pmoa',  // Magic Online Avatars
     'lgn',   // Legions
     'plgn',  // Legions Promos
-    'pons',  // Onslaught Promos
     'pscg',  // Scourge Promos
     'scg',   // Scourge
     '8ed',   // Eighth Edition
@@ -137,9 +139,9 @@ export const SET_CODES = [
     'p04',   // Magic Player Rewards 2004
     'pal04', // Arena League 2004
     'dst',   // Darksteel
+    'pdst',  // Darksteel Promos
     '5dn',   // Fifth Dawn
     'p5dn',  // Fifth Dawn Promos
-    'pdst',  // Darksteel Promos
     'pmrd',  // Mirrodin Promos
     'wc04',  // World Championship Decks 2004
     'chk',   // Champions of Kamigawa
@@ -151,7 +153,6 @@ export const SET_CODES = [
     'p05',   // Magic Player Rewards 2005
     'pal05', // Arena League 2005
     'pjse',  // Junior Series Europe
-    'pmps',  // Magic Premiere Shop 2005
     'bok',   // Betrayers of Kamigawa
     'pbok',  // Betrayers of Kamigawa Promos
     'psok',  // Saviors of Kamigawa Promos
@@ -159,14 +160,15 @@ export const SET_CODES = [
     '9ed',   // Ninth Edition
     'p9ed',  // Ninth Edition Promos
     'psal',  // Salvat 2005
+    'pmps',  // Magic Premiere Shop 2005
     'prav',  // Ravnica: City of Guilds Promos
     'rav',   // Ravnica: City of Guilds
     'p2hg',  // Two-Headed Giant Tournament
+    'dci',   // DCI Promos
     'f06',   // Friday Night Magic 2006
     'g06',   // Judge Gift Cards 2006
     'p06',   // Magic Player Rewards 2006
     'pal06', // Arena League 2006
-    'pgtw',  // Gateway 2006
     'phuk',  // Hachette UK
     'pjas',  // Junior APAC Series
     'pmps06', // Magic Premiere Shop 2006
@@ -185,9 +187,7 @@ export const SET_CODES = [
     'f07',   // Friday Night Magic 2007
     'g07',   // Judge Gift Cards 2007
     'p07',   // Magic Player Rewards 2007
-    'pg07',  // Gateway 2007
     'pmps07', // Magic Premiere Shop 2007
-    'pres',  // Resale Promos
     'plc',   // Planar Chaos
     'pplc',  // Planar Chaos Promos
     'ppro',  // Pro Tour Promos
@@ -197,7 +197,6 @@ export const SET_CODES = [
     '10e',   // Tenth Edition
     'p10e',  // Tenth Edition Promos
     't10e',  // Tenth Edition Tokens
-    'psum',  // Summer of Magic
     'me1',   // Masters Edition
     'lrw',   // Lorwyn
     'plrw',  // Lorwyn Promos
@@ -207,7 +206,6 @@ export const SET_CODES = [
     'f08',   // Friday Night Magic 2008
     'g08',   // Judge Gift Cards 2008
     'p08',   // Magic Player Rewards 2008
-    'pg08',  // Gateway 2008
     'pmps08', // Magic Premiere Shop 2008
     'mor',   // Morningtide
     'pmor',  // Morningtide Promos
@@ -221,7 +219,6 @@ export const SET_CODES = [
     'teve',  // Eventide Tokens
     'drb',   // From the Vault: Dragons
     'me2',   // Masters Edition II
-    'pwpn',  // Wizards Play Network 2008
     'ala',   // Shards of Alara
     'pala',  // Shards of Alara Promos
     'tala',  // Shards of Alara Tokens
@@ -230,10 +227,8 @@ export const SET_CODES = [
     'f09',   // Friday Night Magic 2009
     'g09',   // Judge Gift Cards 2009
     'p09',   // Magic Player Rewards 2009
-    'pdtp',  // Duels of the Planeswalkers 2009 Promos 
+    'pdtp',  // Duels of the Planeswalkers 2009 Promos
     'pmps09', // Magic Premiere Shop 2009
-    'pw09',  // Wizards Play Network 2009
-    'pbook', // Miscellaneous Book Promos
     'con',   // Conflux
     'pcon',  // Conflux Promos
     'tcon',  // Conflux Tokens
@@ -249,7 +244,7 @@ export const SET_CODES = [
     'v09',   // From the Vault: Exiled
     'hop',   // Planechase
     'ohop',  // Planechase Planes
-    'phop',  // Promotional Planes
+    'phop',  // Planechase Promos
     'me3',   // Masters Edition III
     'pzen',  // Zendikar Promos
     'tzen',  // Zendikar Tokens
@@ -260,9 +255,8 @@ export const SET_CODES = [
     'f10',   // Friday Night Magic 2010
     'g10',   // Judge Gift Cards 2010
     'p10',   // Magic Player Rewards 2010
-    'pdp10', // Duels of the Planeswalkers 2010 Promos 
+    'pdp10', // Duels of the Planeswalkers 2010 Promos
     'pmps10', // Magic Premiere Shop 2010
-    'pw10',  // Wizards Play Network 2010
     'pwwk',  // Worldwake Promos
     'twwk',  // Worldwake Tokens
     'wwk',   // Worldwake
@@ -274,7 +268,6 @@ export const SET_CODES = [
     'dpa',   // Duels of the Planeswalkers
     'arc',   // Archenemy
     'oarc',  // Archenemy Schemes
-    'parc',  // Promotional Schemes
     'pm11',  // Magic 2011 Promos
     'm11',   // Magic 2011
     'tm11',  // Magic 2011 Tokens
@@ -290,7 +283,7 @@ export const SET_CODES = [
     'g11',   // Judge Gift Cards 2011
     'olgc',  // Legacy Championship
     'p11',   // Magic Player Rewards 2011
-    'pdp12', // Duels of the Planeswalkers 2012 Promos 
+    'pdp12', // Duels of the Planeswalkers 2012 Promos
     'pmps11', // Magic Premiere Shop 2011
     'ps11',  // Salvat 2011
     'pw11',  // Wizards Play Network 2011
@@ -320,8 +313,8 @@ export const SET_CODES = [
     'f12',   // Friday Night Magic 2012
     'j12',   // Judge Gift Cards 2012
     'l12',   // League Tokens 2012
-    'pdp13', // Duels of the Planeswalkers 2013 Promos 
-    'pidw',  // IDW Comics 2012
+    'pdp13', // Duels of the Planeswalkers 2013 Promos
+    'pidw',  // IDW Comics Inserts
     'pw12',  // Wizards Play Network 2012
     'pdka',  // Dark Ascension Promos
     'dka',   // Dark Ascension
@@ -348,14 +341,13 @@ export const SET_CODES = [
     'f13',   // Friday Night Magic 2013
     'j13',   // Judge Gift Cards 2013
     'l13',   // League Tokens 2013
-    'pdp14', // Duels of the Planeswalkers 2014 Promos 
-    'pi13',  // IDW Comics 2013
+    'pdp14', // Duels of the Planeswalkers 2014 Promos
     'pgtc',  // Gatecrash Promos
     'gtc',   // Gatecrash
     'tgtc',  // Gatecrash Tokens
     'ddk',   // Duel Decks: Sorin vs. Tibalt
     'tddk',  // Duel Decks: Sorin vs. Tibalt Tokens
-    'pwcq',  // World Magic Cup Qualifiers
+    'wmc',   // World Magic Cup Qualifiers
     'pdgm',  // Dragon's Maze Promos
     'dgm',   // Dragon's Maze
     'tdgm',  // Dragon's Maze Tokens
@@ -378,8 +370,6 @@ export const SET_CODES = [
     'f14',   // Friday Night Magic 2014
     'j14',   // Judge Gift Cards 2014
     'l14',   // League Tokens 2014
-    'pdp15', // Duels of the Planeswalkers 2015 Promos 
-    'pi14',  // IDW Comics 2014
     'pbng',  // Born of the Gods Promos
     'bng',   // Born of the Gods
     'tbng',  // Born of the Gods Tokens
@@ -399,6 +389,7 @@ export const SET_CODES = [
     'tcns',  // Conspiracy Tokens
     'vma',   // Vintage Masters
     'ps14',  // San Diego Comic-Con 2014
+    'pdp15', // Duels of the Planeswalkers 2015 Promos
     'ppc1',  // M15 Prerelease Challenge
     'pm15',  // Magic 2015 Promos
     'cp1',   // Magic 2015 Clash Pack
@@ -481,6 +472,7 @@ export const SET_CODES = [
     'oc16',  // Commander 2016 Oversized
     'tc16',  // Commander 2016 Tokens
     'pz2',   // Treasure Chest
+    'opca',  // Planechase Anthology Planes
     'pca',   // Planechase Anthology
     'tpca',  // Planechase Anthology Tokens
     'f17',   // Friday Night Magic 2017
@@ -511,7 +503,7 @@ export const SET_CODES = [
     'tc17',  // Commander 2017 Tokens
     'te01',  // Archenemy: Nicol Bolas Tokens
     'h17',   // HasCon 2017
-    'htr16', // 2016 Heroes of the Realm
+    'phtr',  // 2016 Heroes of the Realm
     'pss2',  // XLN Standard Showdown
     'pxln',  // Ixalan Promos
     'txln',  // Ixalan Tokens
@@ -533,7 +525,7 @@ export const SET_CODES = [
     'rix',   // Rivals of Ixalan
     'trix',  // Rivals of Ixalan Tokens
     'pnat',  // Nationals Promos
-    'plny',  // Lunar New Year 2018 
+    'plny',  // Lunar New Year 2018
     'a25',   // Masters 25
     'ta25',  // Masters 25 Tokens
     'ddu',   // Duel Decks: Elves vs. Inventors
@@ -557,10 +549,10 @@ export const SET_CODES = [
     'pana',  // MTG Arena Promos
     'xana',  // Arena New Player Experience Extras
     'ps18',  // San Diego Comic-Con 2018
-    'htr17', // 2017 Heroes of the Realm
-    'c18',   // Commander 2018
+    'ph17',  // 2017 Heroes of the Realm
     'oc18',  // Commander 2018 Oversized
     'tc18',  // Commander 2018 Tokens
+    'c18',   // Commander 2018
     'grn',   // Guilds of Ravnica
     'med',   // Mythic Edition
     'pgrn',  // Guilds of Ravnica Promos
@@ -574,7 +566,6 @@ export const SET_CODES = [
     'puma',  // Ultimate Box Topper
     'tuma',  // Ultimate Masters Tokens
     'uma',   // Ultimate Masters
-    'opca',  // Planechase Anthology Planes
     'pf19',  // MagicFest 2019
     'prna',  // Ravnica Allegiance Promos
     'rna',   // Ravnica Allegiance
@@ -596,16 +587,16 @@ export const SET_CODES = [
     'ppp1',  // M20 Promo Packs
     'tm20',  // Core Set 2020 Tokens
     'ps19',  // San Diego Comic-Con 2019
-    'htr18', // 2018 Heroes of the Realm
+    'ph18',  // 2018 Heroes of the Realm
     'tc19',  // Commander 2019 Tokens
     'c19',   // Commander 2019
     'oc19',  // Commander 2019 Oversized
-    'teld',  // Throne of Eldraine Tokens
+    'pwcs',  // Planeswalker Championship Promos
     'eld',   // Throne of Eldraine
     'peld',  // Throne of Eldraine Promos
+    'teld',  // Throne of Eldraine Tokens
     'ptg',   // Ponies: The Galloping
     'cmb1',  // Mystery Booster Playtest Cards 2019
-    'mb1',   // Mystery Booster
     'gn2',   // Game Night 2019
     'tgn2',  // Game Night 2019 Tokens
     'ha1',   // Historic Anthology 1
@@ -617,7 +608,6 @@ export const SET_CODES = [
     'tthb',  // Theros Beyond Death Tokens
     'tund',  // Unsanctioned Tokens
     'und',   // Unsanctioned
-    'fmb1',  // Mystery Booster Retail Edition Foils
     'ha2',   // Historic Anthology 2
     'c20',   // Commander 2020
     'oc20',  // Commander 2020 Oversized
@@ -635,7 +625,7 @@ export const SET_CODES = [
     'tm21',  // Core Set 2021 Tokens
     'ajmp',  // Jumpstart Arena Exclusives
     'jmp',   // Jumpstart
-    'htr19', // 2019 Heroes of the Realm
+    'ph19',  // 2019 Heroes of the Realm
     '2xm',   // Double Masters
     't2xm',  // Double Masters Tokens
     'akr',   // Amonkhet Remastered
@@ -649,12 +639,12 @@ export const SET_CODES = [
     'znc',   // Zendikar Rising Commander
     'zne',   // Zendikar Rising Expeditions
     'znr',   // Zendikar Rising
-    'plist', // The List
+    'plst',  // The List
     'klr',   // Kaladesh Remastered
     'cmr',   // Commander Legends
+    'pcmr',  // Commander Legends Promos
     'tcmr',  // Commander Legends Tokens
     'cc1',   // Commander Collection: Green
-    'pf21',  // MagicFest 2021
     'pj21',  // Judge Gift Cards 2021
     'pl21',  // Year of the Ox 2021
     'akhm',  // Kaldheim Art Series
@@ -692,15 +682,17 @@ export const SET_CODES = [
     'afr',   // Adventures in the Forgotten Realms
     'mafr',  // Adventures in the Forgotten Realms Minigames
     'oafc',  // Forgotten Realms Commander Display Commanders
+    'oafr',  // Forgotten Realms Oversized Cards
     'pafr',  // Adventures in the Forgotten Realms Promos
     'tafc',  // Forgotten Realms Commander Tokens
     'tafr',  // Adventures in the Forgotten Realms Tokens
-    'htr20', // 2020 Heroes of the Realm
+    'ph20',  // 2020 Heroes of the Realm
     'cmb2',  // Mystery Booster Playtest Cards 2021
     'j21',   // Jumpstart: Historic Horizons
     'amid',  // Midnight Hunt Art Series
     'mic',   // Midnight Hunt Commander
     'mid',   // Innistrad: Midnight Hunt
+    'mmid',  // Innistrad: Midnight Hunt Minigames
     'omic',  // Midnight Hunt Commander Display Commanders
     'pmid',  // Innistrad: Midnight Hunt Promos
     'smid',  // Innistrad: Midnight Hunt Substitute Cards
@@ -721,36 +713,337 @@ export const SET_CODES = [
     'cc2',   // Commander Collection: Black
     'dbl',   // Innistrad: Double Feature
     'aneo',  // Neon Dynasty Art Series
+    'mneo',  // Kamigawa: Neon Dynasty Minigames
     'nec',   // Neon Dynasty Commander
     'neo',   // Kamigawa: Neon Dynasty
     'pneo',  // Kamigawa: Neon Dynasty Promos
+    'sneo',  // Kamigawa: Neon Dynasty Substitute Cards
     'tnec',  // Neon Dynasty Commander Tokens
     'tneo',  // Kamigawa: Neon Dynasty Tokens
     'pl22',  // Year of the Tiger 2022
     'slx',   // Universes Within
     'pw22',  // Wizards Play Network 2022
     'yneo',  // Alchemy: Kamigawa
+    'q07',   // Challenger Decks 2022
     'gdy',   // Game Day Promos
-    'pncc',  // New Capenna Commander Promos
-    'tncc',  // New Capenna Commander Tokens
-    'phed',  // Heads I Win, Tails You Lose
     'asnc',  // New Capenna Art Series
+    'msnc',  // Streets of New Capenna Minigames
     'ncc',   // New Capenna Commander
-    'snc',   // Streets of New Capenna
-    'tsnc',  // Streets of New Capenna Tokens
+    'pncc',  // New Capenna Commander Promos
     'psnc',  // Streets of New Capenna Promos
+    'snc',   // Streets of New Capenna
+    'tncc',  // New Capenna Commander Tokens
+    'tsnc',  // Streets of New Capenna Tokens
+    'ptsnc', // Streets of New Capenna Southeast Asia Tokens
+    'ysnc',  // Alchemy: New Capenna
+    'aclb',  // Battle for Baldur's Gate Art Series
     'clb',   // Commander Legends: Battle for Baldur's Gate
+    'mclb',  // Commander Legends: Battle for Baldur's Gate Minigames
+    'oclb',  // Battle for Baldur's Gate Oversized Cards
+    'pclb',  // Battle for Baldur's Gate Promos
     'tclb',  // Battle for Baldur's Gate Tokens
     'plg22', // Love Your LGS 2022
+    'hbg',   // Alchemy Horizons: Baldur's Gate
     '2x2',   // Double Masters 2022
-    'sch',   // Store Championships 2022
-    '40k',   // Warhammer 40,000
-    't40k',  // Warhammer 40,000 Tokens
+    't2x2',  // Double Masters 2022 Tokens
+    'sch',   // Store Championships
+    'ea1',   // Explorer Anthology 1
+    'ha6',   // Historic Anthology 6
+    'ph21',  // 2021 Heroes of the Realm
+    'psvc',  // Summer Vacation Promos 2022
+    'p30a',  // 30th Anniversary Play Promos
+    'p30m',  // 30th Anniversary Misc Promos
+    'admu',  // Dominaria United Art Series
     'dmc',   // Dominaria United Commander
     'dmu',   // Dominaria United
-    'bro',   // The Brothers' War
+    'fdmu',  // Dominaria United Jumpstart Front Cards
+    'mdmu',  // Dominaria United Minigames
+    'p30h',  // 30th Anniversary History Promos
+    'pdmu',  // Dominaria United Promos
+    'ptdmu', // Dominaria United Southeast Asia Tokens
+    'tdmc',  // Dominaria United Commander Tokens
+    'tdmu',  // Dominaria United Tokens
+    'wdmu',  // DMU Japanese Promo Tokens
+    'prcq',  // Regional Championship Qualifiers 2022
+    'ydmu',  // Alchemy: Dominaria
+    '40k',   // Warhammer 40,000 Commander
+    'sunf',  // Unfinity Sticker Sheets
+    't40k',  // Warhammer 40,000 Tokens
     'tunf',  // Unfinity Tokens
+    'ulst',  // The List (Unfinity Foil Edition)
     'unf',   // Unfinity
+    'gn3',   // Game Night: Free-for-All
+    'tgn3',  // Game Night: Free-for-All Tokens
+    'slc',   // Secret Lair Countdown
+    'abro',  // The Brothers' War Art Series
+    'bot',   // Transformers
+    'brc',   // The Brothers' War Commander
+    'bro',   // The Brothers' War
+    'brr',   // The Brothers' War Retro Artifacts
+    'fbro',  // The Brothers' War Jumpstart Front Cards
+    'mbro',  // The Brothers' War Minigames
+    'pbro',  // The Brothers' War Promos
+    'ptbro', // The Brothers' War Southeast Asia Tokens
+    'sbro',  // The Brothers' War Substitute Cards
+    'tbot',  // Transformers Tokens
+    'tbrc',  // The Brothers' War Commander Tokens
+    'tbro',  // The Brothers' War Tokens
+    'pewk',  // Eternal Weekend
+    '30a',   // 30th Anniversary Edition
+    't30a',  // 30th Anniversary Tokens
+    'fj22',  // Jumpstart 2022 Front Cards
+    'j22',   // Jumpstart 2022
+    'scd',   // Starter Commander Decks
+    'tscd',  // Starter Commander Deck Tokens
+    'ea2',   // Explorer Anthology 2
+    'ybro',  // Alchemy: The Brothers' War
+    'p23',   // Judge Gift Cards 2023
+    'pw23',  // Wizards Play Network 2023
+    'pr23',  // Regional Championship Qualifiers 2023
+    'dmr',   // Dominaria Remastered
+    'tdmr',  // Dominaria Remastered Tokens
+    'wone',  // ONE Japanese Promo Tokens
+    'aone',  // Phyrexia: All Will Be One Art Series
+    'fone',  // Phyrexia: All Will Be One Jumpstart Front Cards
+    'mone',  // Phyrexia: All Will Be One Minigames
+    'tonc',  // Phyrexia: All Will Be One Commander Tokens
+    'tone',  // Phyrexia: All Will Be One Tokens
+    'onc',   // Phyrexia: All Will Be One Commander
+    'one',   // Phyrexia: All Will Be One
+    'pl23',  // Year of the Rabbit 2023
+    'pone',  // Phyrexia: All Will Be One Promos
+    'unk',   // Unknown Event
+    'slp',   // Secret Lair Promo
+    'yone',  // Alchemy: Phyrexia
+    'sir',   // Shadows over Innistrad Remastered
+    'sis',   // Shadows of the Past
+    'amom',  // March of the Machine Art Series
+    'fmom',  // March of the Machine Jumpstart Front Cards
+    'moc',   // March of the Machine Commander
+    'mom',   // March of the Machine
+    'mul',   // Multiverse Legends
+    'pmom',  // March of the Machine Promos
+    'smom',  // March of the Machine Substitute Cards
+    'tmoc',  // March of the Machine Commander Tokens
+    'tmom',  // March of the Machine Tokens
+    'tmul',  // Multiverse Legends Tokens
+    'wmom',  // MOM Japanese Promo Tokens
+    'mat',   // March of the Machine: The Aftermath
+    'altr',  // Tales of Middle-earth Art Series
+    'fltr',  // Tales of Middle-earth Front Cards
+    'ltc',   // Tales of Middle-earth Commander
+    'ltr',   // The Lord of the Rings: Tales of Middle-earth
+    'mltr',  // The Lord of the Rings: Tales of Middle-earth Minigames
+    'pltr',  // Tales of Middle-earth Promos
+    'tltc',  // Tales of Middle-earth Commander Tokens
+    'tltr',  // Tales of Middle-earth Tokens
+    'pf23',  // MagicFest 2023
+    'ea3',   // Explorer Anthology 3
+    'ha7',   // Historic Anthology 7
+    'ph22',  // 2022 Heroes of the Realm
+    'acmm',  // Commander Masters Art Series
+    'cmm',   // Commander Masters
+    'tcmm',  // Commander Masters Tokens
+    'p30t',  // 30th Anniversary Celebration Tokyo
+    'awoe',  // Wilds of Eldraine Art Series
+    'pmda',  // Magic × Duel Masters Promos
+    'ptsr',  // Time Spiral Remastered Promos
+    'pwoe',  // Wilds of Eldraine Promos
+    'twoc',  // Wilds of Eldraine Commander Tokens
+    'twoe',  // Wilds of Eldraine Tokens
+    'woc',   // Wilds of Eldraine Commander
+    'woe',   // Wilds of Eldraine
+    'wot',   // Wilds of Eldraine: Enchanting Tales
+    'wwoe',  // WOE Japanese Promo Tokens
+    'ywoe',  // Alchemy: Wilds of Eldraine
+    'twho',  // Doctor Who Tokens
+    'who',   // Doctor Who
+    'altc',  // Tales of Middle-earth Scene Box
+    'alci',  // The Lost Caverns of Ixalan Art Series
+    'lcc',   // The Lost Caverns of Ixalan Commander
+    'lci',   // The Lost Caverns of Ixalan
+    'plci',  // The Lost Caverns of Ixalan Promos
+    'pmat',  // March of the Machine: The Aftermath Promos
+    'rex',   // Jurassic World Collection
+    'slci',  // The Lost Caverns of Ixalan Substitute Cards
+    'spg',   // Special Guests
+    'tlcc',  // The Lost Caverns of Ixalan Commander Tokens
+    'tlci',  // The Lost Caverns of Ixalan Tokens
+    'trex',  // Jurassic World Collection Tokens
+    'ylci',  // Alchemy: Ixalan
+    'pf24',  // MagicFest 2024
+    'pw24',  // Wizards Play Network 2024
+    'rvr',   // Ravnica Remastered
+    'trvr',  // Ravnica Remastered Tokens
+    'pl24',  // Year of the Dragon 2024
+    'amkm',  // Murders at Karlov Manor Art Series
+    'mkc',   // Murders at Karlov Manor Commander
+    'mkm',   // Murders at Karlov Manor
+    'pmkm',  // Murders at Karlov Manor Promos
+    'tmkc',  // Murders at Karlov Manor Commander Tokens
+    'tmkm',  // Murders at Karlov Manor Tokens
+    'wmkm',  // MKM Japanese Promo Tokens
+    'pss4',  // MKM Standard Showdown
+    'clu',   // Ravnica: Clue Edition
+    'fclu',  // Ravnica: Clue Edition Front Cards
+    'punk',  // Black Lotus Unknown Planechase
+    'ymkm',  // Alchemy: Murders at Karlov Manor
+    'pip',   // Fallout
+    'tpip',  // Fallout Tokens
+    'aotj',  // Outlaws of Thunder Junction Art Series
+    'big',   // The Big Score
+    'otc',   // Outlaws of Thunder Junction Commander
+    'otj',   // Outlaws of Thunder Junction
+    'otp',   // Breaking News
+    'potj',  // Outlaws of Thunder Junction Promos
+    'tbig',  // The Big Score Tokens
+    'totc',  // Outlaws of Thunder Junction Commander Tokens
+    'totj',  // Outlaws of Thunder Junction Tokens
+    'totp',  // Breaking News Tokens
+    'yotj',  // Alchemy: Outlaws of Thunder Junction
+    'h2r',   // Modern Horizons 2 Timeshifts
+    'amh3',  // Modern Horizons 3 Art Series
+    'm3c',   // Modern Horizons 3 Commander
+    'mh3',   // Modern Horizons 3
+    'pmh3',  // Modern Horizons 3 Promos
+    'smh3',  // Modern Horizons 3 Substitute Cards
+    'tm3c',  // Modern Horizons 3 Commander Tokens
+    'tmh3',  // Modern Horizons 3 Tokens
+    'aacr',  // Assassin's Creed Art Series
+    'acr',   // Assassin's Creed
+    'macr',  // Assassin's Creed Minigames
+    'tacr',  // Assassin's Creed Tokens
+    'ablb',  // Bloomburrow Art Series
+    'blb',   // Bloomburrow
+    'blc',   // Bloomburrow Commander
+    'mb2',   // Mystery Booster 2
+    'pblb',  // Bloomburrow Promos
+    'pcbb',  // Cowboy Bebop
+    'tblb',  // Bloomburrow Tokens
+    'tblc',  // Bloomburrow Commander Tokens
+    'plg24', // Love Your LGS 2024
+    'yblb',  // Alchemy: Bloomburrow
+    'adsk',  // Duskmourn: House of Horror Art Series
+    'dsc',   // Duskmourn: House of Horror Commander
+    'dsk',   // Duskmourn: House of Horror
+    'pdsk',  // Duskmourn: House of Horror Promos
+    'tdsc',  // Duskmourn Commander Tokens
+    'tdsk',  // Duskmourn: House of Horror Tokens
+    'ydsk',  // Alchemy: Duskmourn
+    'pltc',  // Tales of Middle-earth Deluxe Commander Kit
+    'afdn',  // Foundations Art Series
+    'fdc',   // Foundations Commander
+    'fdn',   // Foundations
+    'ffdn',  // Foundations Front Cards
+    'fj25',  // Foundations Jumpstart Front Cards
+    'j25',   // Foundations Jumpstart
+    'pfdn',  // Foundations Promos
+    'tfdn',  // Foundations Tokens
+    'pio',   // Pioneer Masters
+    'pf25',  // MagicFest 2025
+    'pw25',  // Wizards Play Network 2025
+    'pspl',  // Spotlight Series
+    'ainr',  // Innistrad Remastered Art Series
+    'inr',   // Innistrad Remastered
+    'tinr',  // Innistrad Remastered Tokens
+    'pjsc',  // Japan Standard Cup
+    'adft',  // Aetherdrift Art Series
+    'dft',   // Aetherdrift
+    'drc',   // Aetherdrift Commander
+    'pdft',  // Aetherdrift Promos
+    'pl25',  // Year of the Snake 2025
+    'tdft',  // Aetherdrift Tokens
+    'tdrc',  // Aetherdrift Commander Tokens
+    'pssc',  // Secret Lair Showcase Planes
+    'ydft',  // Alchemy: Aetherdrift
+    'plg25', // Love Your LGS 2025
+    'atdm',  // Tarkir: Dragonstorm Art Series
+    'ptdm',  // Tarkir: Dragonstorm Promos
+    'tdc',   // Tarkir: Dragonstorm Commander
+    'tdm',   // Tarkir: Dragonstorm
+    'ttdc',  // Tarkir: Dragonstorm Commander Tokens
+    'ttdm',  // Tarkir: Dragonstorm Tokens
+    'ytdm',  // Alchemy: Tarkir
+    'pa1',   // Pioneer Anthology 1
+    'afin',  // Final Fantasy Art Series
+    'fca',   // Final Fantasy: Through the Ages
+    'fic',   // Final Fantasy Commander
+    'fin',   // Final Fantasy
+    'pfin',  // Final Fantasy Promos
+    'pss5',  // FIN Standard Showdown
+    'rfin',  // Final Fantasy Regional Promos
+    'tfic',  // Final Fantasy Commander Tokens
+    'tfin',  // Final Fantasy Tokens
+    'wfin',  // FIN Asia WPN Promo Tokens
+    'aeoe',  // Edge of Eternities Art Series
+    'eoc',   // Edge of Eternities Commander
+    'eoe',   // Edge of Eternities
+    'eos',   // Edge of Eternities: Stellar Sights
+    'pbig',  // The Big Score Promos
+    'peoe',  // Edge of Eternities Promos
+    'teoc',  // Edge of Eternities Commander Tokens
+    'teoe',  // Edge of Eternities Tokens
+    'aa1',   // Arena Anthology 1
+    'aa2',   // Arena Anthology 2
+    'yeoe',  // Alchemy: Edge of Eternities
+    'ph23',  // 2023 Heroes of the Realm
+    'aa3',   // Arena Anthology 3
+    'aa4',   // Arena Anthology 4
+    'om1',   // Through the Omenpaths
+    'omb',   // Through the Omenpaths Bonus Sheet
+    'aspm',  // Marvel's Spider-Man Art Series
+    'mar',   // Marvel Universe
+    'pspm',  // Marvel's Spider-Man Promos
+    'spe',   // Marvel's Spider-Man Eternal
+    'spm',   // Marvel's Spider-Man
+    'tspm',  // Marvel's Spider-Man Tokens
+    'lmar',  // Marvel Legends Series Inserts
+    'atla',  // Avatar: the Last Airbender Art Series
+    'atle',  // Avatar: the Last Airbender Eternal Art Series
+    'ftla',  // Avatar: The Last Airbender Beginner Box Front Cards
+    'jtla',  // Avatar: The Last Airbender Jumpstart Front Cards
+    'ptla',  // Avatar: The Last Airbender Promos
+    'tla',   // Avatar: The Last Airbender
+    'tle',   // Avatar: The Last Airbender Eternal
+    'ttla',  // Avatar: The Last Airbender Tokens
+    'ttle',  // Avatar: The Last Airbender Eternal Tokens
+    'afic',  // Final Fantasy Scene Box
+    'pf26',  // MagicFest 2026
+    'pw26',  // Wizards Play Network 2026
+    'aecl',  // Lorwyn Eclipsed Art Series
+    'ecc',   // Lorwyn Eclipsed Commander
+    'ecl',   // Lorwyn Eclipsed
+    'pecl',  // Lorwyn Eclipsed Promos
+    'tecc',  // Lorwyn Eclipsed Commander Tokens
+    'tecl',  // Lorwyn Eclipsed Tokens
+    'yecl',  // Alchemy: Lorwyn Eclipsed
+    'pl26',  // Year of the Horse 2026
+    'atmt',  // Teenage Mutant Ninja Turtles Art Series
+    'ftmc',  // Teenage Mutant Ninja Turtles Eternal Front Cards
+    'pza',   // Teenage Mutant Ninja Turtles Source Material
+    'tmc',   // Teenage Mutant Ninja Turtles Eternal
+    'tmt',   // Teenage Mutant Ninja Turtles
+    'ttmc',  // Teenage Mutant Ninja Turtles Eternal Tokens
+    'ttmt',  // Teenage Mutant Ninja Turtles Tokens
+    'asos',  // Secrets of Strixhaven Art Series
+    'psos',  // Secrets of Strixhaven Promos
+    'soa',   // Secrets of Strixhaven Mystical Archive
+    'soc',   // Secrets of Strixhaven Commander
+    'sos',   // Secrets of Strixhaven
+    'tsoc',  // Secrets of Strixhaven Commander Tokens
+    'tsos',  // Secrets of Strixhaven Tokens
+    'ysos',  // Alchemy: Secrets of Strixhaven
+    'fmsc',  // Marvel Super Heroes Jumpstart Front Cards
+    'msc',   // Marvel Super Heroes Commander
+    'msh',   // Marvel Super Heroes
+    'tmsc',  // Marvel Super Heroes Commander Tokens
+    'tmsh',  // Marvel Super Heroes Tokens
+    'hob',   // The Hobbit
+    'hoc',   // The Hobbit Commander
+    'thob',  // The Hobbit Tokens
+    'fra',   // Reality Fracture
+    'trc',   // Star Trek Commander
+    'trk',   // Star Trek
     // END_SECTION SET_ATOM_VALUES
 ];
 
